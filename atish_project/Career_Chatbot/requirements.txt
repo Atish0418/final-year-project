@@ -1,0 +1,13 @@
+flask
+flask-cors
+uvicorn
+python-dotenv
+sentence-transformers
+lightrag-hku
+phi
+networkx
+graphviz
+google-generativeai
+phidata
+groq
+psycopg

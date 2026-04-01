@@ -1,0 +1,136 @@
+===== RESPONSE FROM LIGHT-RAG (searchKnowledgeBase) =====
+
+After completing your 12th science, a vast array of career options open up to you, depending on your specific subjects (Physics, Chemistry, Biology, Maths, etc.) and your interests.  Here are some broad categories and examples:
+
+**I. Higher Education & Professional Courses:**
+
+* **Engineering:** This is a popular choice, encompassing numerous specializations like:
+    * Computer Science Engineering
+    * Mechanical Engineering
+    * Electrical Engineering
+    * Civil Engineering
+    * Chemical Engineering
+    * Biomedical Engineering
+    * Aerospace Engineering
+    * And many more... Requires strong Maths and Physics background.
+
+* **Medicine:** Requires Biology and often strong Chemistry. Leads to becoming a doctor, surgeon, etc. Highly competitive.
+
+* **Pharmacy:** Focuses on drug development, dispensing, and patient care. Requires strong Chemistry background.
+
+* **Dentistry:** Focuses on oral health. Requires Biology.
+
+* **Veterinary Science:** Focuses on animal health. Requires Biology.
+
+* **Architecture:** Combines design, engineering, and art. Requires Maths and often some drawing skills.
+
+* **Pure Sciences (BSc):** Allows for specialization in Physics, Chemistry, Biology, Mathematics, or combinations thereof. Often a stepping stone to research or further specialized studies.
+
+* **Technology Related Courses:**
+    * Computer Applications
+    * Information Technology
+    * Data Science
+    * Artificial Intelligence
+    * Web Development
+
+
+**II. Vocational & Diploma Courses (Shorter duration):**
+
+* **Diploma in Engineering:** Shorter duration than a B.Tech, focusing on specific technical skills.
+
+* **Diploma in Pharmacy:** Similar to a full degree but shorter.
+
+* Various other diploma courses in areas like medical lab technology, X-ray technology, etc. These are often more hands-on and job-focused.
+
+
+**III. Other Options:**
+
+* **Paramedical Courses:** Supporting roles in healthcare, such as physiotherapy, radiography, etc.
+
+* **Animation & VFX:** If you have artistic inclination and enjoy computer graphics.
+
+* **Design (Graphic, Fashion, Interior):** If you have a creative bent.
+
+
+**To help me narrow down the suggestions for _you_, please tell me:**
+
+* **What subjects did you study in 12th science?** (e.g., PCM, PCB, PCMB)
+* **What are your interests and hobbies?**
+* **What kind of work environment do you prefer?** (e.g., indoors, outdoors, team-based, independent)
+* **What are your career goals (long-term aspirations)?**
+* **What is your budget for education?**
+
+With more information, I can give you more specific and personalized career recommendations.
+
+
+===== RESPONSE FROM EDUSEARCH AGENT =====
+
+
+Running:
+ - duckduckgo_search(max_results=5, query=career options after 12th science)
+
+
+Running:
+ - duckduckgo_search(max_results=5, query=best courses after 12th science)
+
+Here are some possible career options after 12th science:
+
+You can pursue various undergraduate courses such as B.Sc., B.Tech., or B.E. in fields like physics, chemistry, biology, computer science, or mathematics.
+
+Some popular career options include:
+* Medical field (MBBS, BDS, BAMS, BHMS, etc.)
+* Engineering (Aerospace, Biotechnology, Chemical, Civil, Computer Science, Electrical, Electronics, Mechanical, etc.)
+* Science research and academia
+* Data analysis and science
+* Software development and IT
+* Environmental science and conservation
+* Biotechnology and genetic engineering
+
+You can also consider vocational courses or certification programs in areas like computer programming, data analysis, digital marketing, or emerging technologies.
+
+Source: 
+https://collegedunia.com/exams/science-stream-after-12th-career-options-1144
+https://www.youthkiawaaz.com/2019/05/career-options-after-12th-science-stream/
+
+===== FINAL SUMMARIZED RESPONSE =====
+
+## Career Options After 12th Science
+
+### Undergraduate Courses
+
+You can pursue undergraduate courses such as B.Sc., B.Tech., or B.E. in various fields like physics, chemistry, biology, computer science, mathematics, and engineering.
+
+### Popular Career Options
+
+1. **Medical Field:**
+	* MBBS, BDS, BAMS, BHMS, etc.
+	* Careers include doctor, surgeon, dentist, and pharmacists.
+2. **Engineering:**
+	* Aerospace, Biotechnology, Chemical, Civil, Computer Science, Electrical, Electronics, Mechanical, etc.
+	* Careers include software development, data analysis, and IT.
+3. **Science Research and Academia:**
+	* Careers include scientists, researchers, and professors.
+4. **Data Analysis and Science:**
+	* Careers include data analysts, data scientists, and business analysts.
+5. **Software Development and IT:**
+	* Careers include software developers, IT consultants, and system analysts.
+6. **Environmental Science and Conservation:**
+	* Careers include environmental scientists, conservationists, and sustainability experts.
+7. **Biotechnology and Genetic Engineering:**
+	* Careers include biotechnologists, genetic engineers, and pharmaceutical researchers.
+
+### Vocational Courses and Certification Programs
+
+1. **Computer Programming:**
+	* Careers include software developers, programmers, and coding specialists.
+2. **Data Analysis:**
+	* Careers include data analysts, data scientists, and business analysts.
+3. **Digital Marketing:**
+	* Careers include digital marketers, social media managers, and online advertisers.
+4. **Emerging Technologies:**
+	* Careers include AI and machine learning engineers, cybersecurity experts, and blockchain developers.
+
+### References
+
+1. [CollegeDunia](https://collegedunia.com/exams/science-stream-after-12th-career-options-1144)
+2. [YouthKiAwaaz](https://www.youthkiawaaz.com/2019/05/career-options-after-12th-science-stream/)

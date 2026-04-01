@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background-color: #D5D3C8; /* Beige/grey from design */
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Space Grotesk", system-ui, -apple-system, sans-serif;
+  color: #111827;
+  background: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.glass-panel {
+  @apply bg-white border border-gray-100 shadow-card;
+}
+
+.grid-overlay {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+  background-size: 80px 80px;
+  /* Remove mask to make it consistent like design */
+}
+
+/* Native selects should render in light mode so options stay visible on dropdown */
+select {
+  color-scheme: light;
+  color: #111827;
+  background-color: #ffffff;
+}
+
+select option {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+@layer components {
+  .page-container {
+    @apply container px-4 sm:px-6 lg:px-8;
+  }
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

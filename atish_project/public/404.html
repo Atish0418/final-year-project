@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FuturePath 3D | Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=/FuturePath-3D/#/" />
+    <script>
+      (function () {
+        var base = "/FuturePath-3D/";
+        var path = location.pathname.startsWith(base)
+          ? location.pathname.slice(base.length)
+          : location.pathname.replace(/^\//, "");
+
+        // Send the original path into the hash so HashRouter can resolve it
+        var target = base + "#/" + path + location.search + location.hash;
+        location.replace(target);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting…</p>
+  </body>
+</html>

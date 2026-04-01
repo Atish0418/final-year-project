@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d6" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d5" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d4" for="edge" attr.name="description" attr.type="string"/>
+<key id="d3" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d2" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d1" for="node" attr.name="description" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_type" attr.type="string"/>
+<graph edgedefault="undirected"><node id="&quot;HIGHER SECONDARY EDUCATION&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Higher Secondary Education encompasses Science, Commerce, and Arts/Humanities streams, offering specialized academic pathways for students after 10th grade.  Eligibility criteria and career paths vary by stream."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;SCIENCE STREAM&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"The Science Stream in Higher Secondary Education focuses on Physics, Chemistry, Biology (PCB) or Mathematics (PCM), leading to careers in medicine, engineering, and computer science.  Requires a minimum of 75% in Class 10 with strong scores in Science and Mathematics."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;MEDICAL (PCB)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"The Medical (PCB) specialization within the Science Stream prepares students for careers in life sciences and healthcare, including doctors, pharmacists, and biotechnologists. Requires strong performance in Physics, Chemistry, and Biology."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;ENGINEERING (PCM)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"The Engineering (PCM) specialization within the Science Stream prepares students for careers in various engineering domains, architecture, and data analysis.  Requires strong performance in Physics, Chemistry, and Mathematics."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;COMPUTER SCIENCE (PCMC)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"The Computer Science (PCMC) specialization within the Science Stream focuses on programming, software development, AI, and emerging technologies. Includes Computer Science as an additional subject."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;COMMERCE STREAM&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"The Commerce Stream in Higher Secondary Education focuses on Accountancy, Business Studies, Economics, and Mathematics, leading to careers in finance, accounting, marketing, and entrepreneurship. Requires a minimum of 60% in Class 10 with good Mathematics."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;ARTS/HUMANITIES STREAM&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"The Arts/Humanities Stream in Higher Secondary Education offers subjects like History, Geography, and Literature, leading to careers in journalism, law, teaching, and social sciences.  Requires a minimum of 35% in Class 10."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;DIPLOMA COURSES&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Diploma programs offer skill-based, practical learning with early career entry.  Eligibility requirements vary by program, generally requiring a minimum of 35% in Class 10, with higher requirements for technical diplomas."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;POLYTECHNIC DIPLOMAS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Polytechnic Diplomas offer technical training in fields like Mechanical, Electrical, and Computer Science Engineering, preparing students for industry roles and potentially B.Tech programs. Requires a minimum of 50% in Class 10 with strong Science and Mathematics."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;PARAMEDICAL DIPLOMAS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Paramedical Diplomas provide training for healthcare support roles such as Medical Lab Technician and Nursing Assistance."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;HOTEL MANAGEMENT DIPLOMAS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Hotel Management Diplomas cover Culinary Arts, Food &amp; Beverage Management, and Front Office Operations, preparing students for the hospitality industry."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;GRAPHIC DESIGN &amp; ANIMATION&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Graphic Design &amp; Animation diplomas focus on multimedia, 2D/3D animation, and UI/UX design."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;FASHION &amp; TEXTILE DESIGNING&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Fashion &amp; Textile Designing diplomas specialize in apparel design, jewelry design, and textile merchandising."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;ITI (INDUSTRIAL TRAINING INSTITUTE) COURSES&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"ITI Courses provide vocational training in trades like Electrician, Fitter, and Welder, emphasizing hands-on skills."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;VOCATIONAL COURSES &amp; CERTIFICATIONS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Short-term skill-based programs designed for quick employment or freelancing, including areas like digital marketing, web development, and photography."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;ENTREPRENEURSHIP &amp; SKILL DEVELOPMENT&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"This category encompasses self-employment and starting a business early, including options like e-commerce, freelancing, and handicrafts."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;GOVERNMENT &amp; DEFENSE JOBS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Government and defense sector jobs offer job security and long-term career growth.  Requires Indian citizenship, minimum age of 17, single marital status, and physical fitness."</data>
+  <data key="d2">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;INDIAN ARMY&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Indian Army offers job opportunities for Indian citizens who have completed 10th grade, with specific requirements for marks and physical fitness."&lt;SEP&gt;"The Indian Army offers various job roles such as Soldiers GD, Clerk, and Tradesman, with specific eligibility criteria."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb&lt;SEP&gt;chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</node>
+<node id="&quot;INDIAN NAVY&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Indian Navy offers job opportunities for Indian citizens who have completed 10th grade, with specific requirements for marks."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;INDIAN AIR FORCE&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Indian Air Force offers job opportunities for Indian citizens who have completed 10th grade, with specific requirements for marks in aggregate and English."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;RAILWAY&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Indian Railways (through RRB) offers various job roles requiring a 10th-grade pass and either an ITI certificate or NAC."&lt;SEP&gt;"The Railway organization offers various technical and clerical posts with 12th or diploma eligibility."</data>
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa&lt;SEP&gt;chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;SSC&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Staff Selection Commission (SSC) offers government jobs, including MTS and LDC roles, requiring a 10th-grade pass."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;BANKING SECTOR&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The banking sector offers government jobs, with roles like MTS and LDC requiring a 10th-grade pass."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;INDIA&quot;">
+  <data key="d0">"GEO"</data>
+  <data key="d1">"India is the country where the described job opportunities are available, with citizenship a requirement for all roles."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;ENGINEERING&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Engineering (B.E/B.Tech) is a career option after 12th grade requiring minimum 60% in PCM and entrance exams like JEE Main and JEE Advanced."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;MEDICAL&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Medical fields (MBBS/BDS/BAMS/BHMS) are career options after 12th grade requiring minimum 50% in PCB and the NEET entrance exam."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;PURE SCIENCES&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Pure Sciences (B.Sc.) is a career option after 12th grade, with eligibility varying between 50-60% in science subjects."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;COMPUTER SCIENCE &amp; IT&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Computer Science &amp; IT (BCA, B.Sc. CS, B.Sc. IT) is a career option after 12th grade requiring minimum 50% overall, with Maths/CS preferred."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;BIOTECHNOLOGY, GENETICS, MICROBIOLOGY&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Biotechnology, Genetics, and Microbiology are career options after 12th grade, requiring minimum 50% in PCB or PCM."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;CHARTERED ACCOUNTANCY (CA)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Chartered Accountancy (CA) is a career option after 12th grade, requiring a commerce background and the CA Foundation exam."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;COMPANY SECRETARY (CS)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Company Secretary (CS) is a career option after 12th grade (any stream) requiring the CSEET exam."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;BACHELOR OF COMMERCE (B.COM)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Bachelor of Commerce (B.Com) is a career option after 12th grade, requiring minimum 50% in the Commerce stream."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;ECONOMICS, FINANCE, AND STATISTICS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Economics, Finance, and Statistics are career options after 12th grade, with 60%+ and Maths preferred."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;BACHELOR OF BUSINESS ADMINISTRATION (BBA)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Bachelor of Business Administration (BBA) is a career option after 12th grade, requiring minimum 50% in any stream."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;LAW (BA LLB)&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Law (BA LLB) is a career option after 12th grade, requiring 50% in any stream and entrance exams like CLAT and LSAT."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;DESIGN&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Design (Fashion, Interior, Product) is a career option after 12th grade, requiring 50% in any stream and entrance exams like NID, NIFT, UCEED, and CEED."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;MASS COMMUNICATION, JOURNALISM&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Mass Communication and Journalism are career options after 12th grade, requiring 50% in any stream."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;PSYCHOLOGY, SOCIOLOGY, SOCIAL WORK&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Psychology, Sociology, and Social Work are career options after 12th grade, requiring 50% in any stream."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;HOTEL MANAGEMENT&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Hotel Management is a career option after 12th grade, requiring 45-50% in any stream and the NCHMCT JEE entrance exam."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;PERFORMING ARTS &amp; FINE ARTS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Performing Arts &amp; Fine Arts are career options after 12th grade, with portfolio/audition-based selection."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;ANIMATION, MULTIMEDIA, AND GAMING&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Animation, Multimedia, and Gaming are career options after 12th grade, preferably with basic computer knowledge."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;TRAVEL &amp; TOURISM&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Travel &amp; Tourism is a career option after 12th grade, requiring 45-50% in any stream."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;EDUCATION&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Education (B.Ed, D.El.Ed) is a career option after graduation, requiring a graduate degree and entrance exams for teaching programs."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;DIGITAL MARKETING&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Digital Marketing is a skill-based/professional certification option after 12th grade."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;ETHICAL HACKING &amp; CYBERSECURITY&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Ethical Hacking &amp; Cybersecurity is a skill-based/professional certification option after 12th grade."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;DATA SCIENCE &amp; AI&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Data Science &amp; AI is a skill-based/professional certification option after 12th grade."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;EVENT MANAGEMENT&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Event Management is a skill-based/professional certification option after 12th grade."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;PHOTOGRAPHY/VIDEOGRAPHY&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Photography/Videography is a skill-based/professional certification option after 12th grade."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;FOREIGN LANGUAGES&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Foreign Languages are skill-based/professional certification options after 12th grade."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;CULINARY ARTS&quot;">
+  <data key="d0">"CATEGORY"</data>
+  <data key="d1">"Culinary Arts is a skill-based/professional certification option after 12th grade."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;NDA (NATIONAL DEFENCE ACADEMY)&quot;">
+  <data key="d0">"EVENT"</data>
+  <data key="d1">"NDA is a competitive exam after 12th grade for admission to the National Defence Academy."&lt;SEP&gt;"The National Defence Academy is an organization that offers admission after the 12th grade, requiring PCM for Air Force/Navy and any stream for Army."</data>
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa&lt;SEP&gt;chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;SSC CHSL&quot;">
+  <data key="d0">"EVENT"</data>
+  <data key="d1">"SSC CHSL is a competitive exam after 12th grade."&lt;SEP&gt;"SSC CHSL is an organization that conducts exams for 12th pass candidates, testing general intelligence, English, and math."</data>
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa&lt;SEP&gt;chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;BANKING/CLERICAL JOBS (IBPS)&quot;">
+  <data key="d0">"EVENT"</data>
+  <data key="d1">"Banking/Clerical Jobs (IBPS) are available after graduation, but some training is available post-12th."</data>
+  <data key="d2">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</node>
+<node id="&quot;IBPS&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"IBPS (Institute of Banking Personnel Selection) is an organization involved in banking/clerical job recruitment, primarily after graduation, but with some post-12th training opportunities."</data>
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</node>
+<node id="&quot;AIR FORCE&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Air Force is a branch of the military requiring PCM for NDA admission."</data>
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</node>
+<node id="&quot;NAVY&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Navy is a branch of the military requiring PCM for NDA admission."</data>
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</node>
+<node id="&quot;ARMY&quot;">
+  <data key="d0">"ORGANIZATION"</data>
+  <data key="d1">"The Army is a branch of the military with open NDA admission to any stream."</data>
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</node>
+<node id="&quot;BANKING/CLERICAL JOBS&quot;">
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+  <data key="d1">"IBPS is involved in recruitment for Banking/Clerical Jobs, typically after graduation."</data>
+  <data key="d0">UNKNOWN</data>
+</node>
+<node id="&quot;RAILWAY RECRUITMENT&quot;">
+  <data key="d2">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+  <data key="d1">"The Railway organization conducts Railway Recruitment for various technical and clerical positions."</data>
+  <data key="d0">UNKNOWN</data>
+</node>
+<edge source="&quot;HIGHER SECONDARY EDUCATION&quot;" target="&quot;SCIENCE STREAM&quot;">
+  <data key="d3">9.0</data>
+  <data key="d4">"The Science Stream is one of the main academic pathways offered within Higher Secondary Education."</data>
+  <data key="d5">"academic pathway"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;HIGHER SECONDARY EDUCATION&quot;" target="&quot;COMMERCE STREAM&quot;">
+  <data key="d3">9.0</data>
+  <data key="d4">"The Commerce Stream is one of the main academic pathways offered within Higher Secondary Education."</data>
+  <data key="d5">"academic pathway"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;HIGHER SECONDARY EDUCATION&quot;" target="&quot;ARTS/HUMANITIES STREAM&quot;">
+  <data key="d3">9.0</data>
+  <data key="d4">"The Arts/Humanities Stream is one of the main academic pathways offered within Higher Secondary Education."</data>
+  <data key="d5">"academic pathway"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;DIPLOMA COURSES&quot;" target="&quot;POLYTECHNIC DIPLOMAS&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"Polytechnic Diplomas are a type of Diploma Course focusing on technical skills."</data>
+  <data key="d5">"course type"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;DIPLOMA COURSES&quot;" target="&quot;PARAMEDICAL DIPLOMAS&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"Paramedical Diplomas are a type of Diploma Course focusing on healthcare support roles."</data>
+  <data key="d5">"course type"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;DIPLOMA COURSES&quot;" target="&quot;HOTEL MANAGEMENT DIPLOMAS&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"Hotel Management Diplomas are a type of Diploma Course focusing on hospitality."</data>
+  <data key="d5">"course type"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;DIPLOMA COURSES&quot;" target="&quot;GRAPHIC DESIGN &amp; ANIMATION&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"Graphic Design &amp; Animation diplomas are a type of Diploma Course focusing on creative skills."</data>
+  <data key="d5">"course type"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;DIPLOMA COURSES&quot;" target="&quot;FASHION &amp; TEXTILE DESIGNING&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"Fashion &amp; Textile Designing diplomas are a type of Diploma Course focusing on fashion and textiles."</data>
+  <data key="d5">"course type"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;DIPLOMA COURSES&quot;" target="&quot;ITI (INDUSTRIAL TRAINING INSTITUTE) COURSES&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"ITI Courses are a type of Diploma Course focusing on vocational training in trades."</data>
+  <data key="d5">"course type"</data>
+  <data key="d6">chunk-8e1918584e41ba4ee4c35d5383900d4a</data>
+</edge>
+<edge source="&quot;INDIAN ARMY&quot;" target="&quot;INDIA&quot;">
+  <data key="d3">9.0</data>
+  <data key="d4">"The Indian Army is located in and recruits citizens of India."</data>
+  <data key="d5">"location, citizenship"</data>
+  <data key="d6">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</edge>
+<edge source="&quot;INDIAN NAVY&quot;" target="&quot;INDIA&quot;">
+  <data key="d3">9.0</data>
+  <data key="d4">"The Indian Navy is located in and recruits citizens of India."</data>
+  <data key="d5">"location, citizenship"</data>
+  <data key="d6">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</edge>
+<edge source="&quot;INDIAN AIR FORCE&quot;" target="&quot;INDIA&quot;">
+  <data key="d3">9.0</data>
+  <data key="d4">"The Indian Air Force is located in and recruits citizens of India."</data>
+  <data key="d5">"location, citizenship"</data>
+  <data key="d6">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</edge>
+<edge source="&quot;RAILWAY&quot;" target="&quot;INDIA&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"Indian Railways operates within India and employs Indian citizens."</data>
+  <data key="d5">"location, employment"</data>
+  <data key="d6">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</edge>
+<edge source="&quot;RAILWAY&quot;" target="&quot;RAILWAY RECRUITMENT&quot;">
+  <data key="d3">9.0</data>
+  <data key="d4">"The Railway organization conducts Railway Recruitment for various technical and clerical positions."</data>
+  <data key="d5">"recruitment, job type"</data>
+  <data key="d6">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</edge>
+<edge source="&quot;SSC&quot;" target="&quot;INDIA&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"SSC is an Indian government organization offering jobs to Indian citizens."</data>
+  <data key="d5">"government, citizenship"</data>
+  <data key="d6">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</edge>
+<edge source="&quot;BANKING SECTOR&quot;" target="&quot;INDIA&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"The Indian banking sector offers jobs to Indian citizens."</data>
+  <data key="d5">"location, employment"</data>
+  <data key="d6">chunk-515b3504d3f62f861ad38ebf28ca2ffb</data>
+</edge>
+<edge source="&quot;NDA (NATIONAL DEFENCE ACADEMY)&quot;" target="&quot;AIR FORCE&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"NDA offers admission to the Air Force, requiring PCM."</data>
+  <data key="d5">"admission requirements, military branch"</data>
+  <data key="d6">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</edge>
+<edge source="&quot;NDA (NATIONAL DEFENCE ACADEMY)&quot;" target="&quot;NAVY&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"NDA offers admission to the Navy, requiring PCM."</data>
+  <data key="d5">"admission requirements, military branch"</data>
+  <data key="d6">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</edge>
+<edge source="&quot;NDA (NATIONAL DEFENCE ACADEMY)&quot;" target="&quot;ARMY&quot;">
+  <data key="d3">8.0</data>
+  <data key="d4">"NDA offers admission to the Army, open to any stream."</data>
+  <data key="d5">"admission requirements, military branch"</data>
+  <data key="d6">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</edge>
+<edge source="&quot;IBPS&quot;" target="&quot;BANKING/CLERICAL JOBS&quot;">
+  <data key="d3">7.0</data>
+  <data key="d4">"IBPS is involved in recruitment for Banking/Clerical Jobs, typically after graduation."</data>
+  <data key="d5">"recruitment, job type"</data>
+  <data key="d6">chunk-3a4c4348d41085028a59ce6c43fc9baa</data>
+</edge>
+</graph></graphml>

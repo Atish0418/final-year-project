@@ -1,0 +1,68 @@
+{
+    "careerPaths": {
+        "careerOptions": {
+            "Engineering": [
+                "Computer Science Engineering",
+                "Mechanical Engineering",
+                "Electrical Engineering",
+                "Civil Engineering",
+                "Chemical Engineering",
+                "Biomedical Engineering",
+                "Aerospace Engineering"
+            ],
+            "Medicine": [
+                "Doctor",
+                "Surgeon"
+            ],
+            "Pharmacy": [
+                "Drug Development",
+                "Dispensing",
+                "Patient Care"
+            ],
+            "Dentistry": [],
+            "Veterinary Science": [],
+            "Architecture": [],
+            "Pure Sciences (BSc)": [
+                "Physics",
+                "Chemistry",
+                "Biology",
+                "Mathematics"
+            ],
+            "Technology": [
+                "Computer Applications",
+                "Information Technology",
+                "Data Science",
+                "Artificial Intelligence",
+                "Web Development"
+            ],
+            "Paramedical": [
+                "Physiotherapy",
+                "Radiography"
+            ],
+            "Design": [
+                "Graphic Design",
+                "Fashion Design",
+                "Interior Design"
+            ],
+            "Animation & VFX": []
+        },
+        "vocationalTraining": [
+            "Diploma in Engineering",
+            "Diploma in Pharmacy",
+            "Medical Lab Technology",
+            "X-ray Technology"
+        ],
+        "otherOptions": [
+            "Animation & VFX",
+            "Design (Graphic, Fashion, Interior)",
+            "Paramedical Courses"
+        ],
+        "choosingTheRightPath": [
+            "Subjects studied in 12th science",
+            "Interests and hobbies",
+            "Preferred work environment",
+            "Long-term career goals",
+            "Education budget"
+        ]
+    }
+}
