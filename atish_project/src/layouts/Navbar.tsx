@@ -18,9 +18,6 @@ const mainLinks = [
 
 const careerToolsLinks = [
   { to: "/career-ai", labelKey: "nav_chatbot" },
-  { to: "/mentors", labelKey: "nav_mentors" },
-  { to: "/mock-interview", labelKey: "nav_interview" },
-  { to: "/cover-letter", labelKey: "nav_cover_letter" },
 ];
 
 const platformLinks = [
