@@ -90,23 +90,7 @@ Respond ONLY with this exact JSON (no extra text):
 function getFallback(): AIQuizPrediction {
   return {
     insight: "You show a strong aptitude for analytical thinking combined with creative problem solving — a rare and powerful combination for modern careers.",
-    careers: [
-      {
-        title: "B.Tech Computer Science Engineering",
-        specialization: "Artificial Intelligence & Data Science",
-        why: "Your logical mindset and interest in technology make AI/CS an ideal fit for you."
-      },
-      {
-        title: "Bachelor of Design (B.Des)",
-        specialization: "User Experience & Interaction Design",
-        why: "Your creative instincts align well with designing intuitive digital experiences."
-      },
-      {
-        title: "BBA / MBA",
-        specialization: "Business Analytics & Strategy",
-        why: "Your organizational approach and leadership traits are key in business management."
-      }
-    ],
-    topStreams: ["Engineering", "Design", "Management"]
+    careers: [],
+    topStreams: []
   };
 }
