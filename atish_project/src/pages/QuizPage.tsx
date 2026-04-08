@@ -10,8 +10,9 @@ import { saveQuizResult } from "../services/firebaseService";
 import { clearQuizState, loadQuizResultLocal, loadQuizState, saveQuizResultLocal, saveQuizState } from "../utils/quizStorage";
 import type { QuizQuestion } from "../types/quiz";
 import { Seo } from "../components/Seo";
+import { QuizOption } from "../components/quiz/QuizOption";
 
-const orderedQuestions = [...quizQuestions].filter((q) => q.enabled !== false).sort((a, b) => a.step - b.step);
+const allQuestions = [...quizQuestions].filter((q) => q.enabled !== false).sort((a, b) => a.step - b.step);
 
 const QuizPage = () => {
   const navigate = useNavigate();
@@ -24,17 +25,26 @@ const QuizPage = () => {
     const stored = loadQuizState();
     if (stored) {
       setAnswers(stored.answers ?? {});
-      setCurrent(Math.min(orderedQuestions.length - 1, stored.step ?? 0));
       setResumable(true);
+      // We don't restore 'current' directly because the path might have changed
     }
   }, []);
 
-  const progress = useMemo(() => {
-    const answered = orderedQuestions.filter((q) => (answers[q.id] ?? []).length > 0).length;
-    return Math.round((answered / orderedQuestions.length) * 100);
+  const filteredQuestions = useMemo(() => {
+    return allQuestions.filter((q) => {
+      if (!q.dependsOn) return true;
+      const { questionId, optionId } = q.dependsOn;
+      const answered = answers[questionId] ?? [];
+      return answered.includes(optionId);
+    });
   }, [answers]);
 
-  const currentQuestion: QuizQuestion = orderedQuestions[current];
+  const progress = useMemo(() => {
+    const answered = filteredQuestions.filter((q) => (answers[q.id] ?? []).length > 0).length;
+    return Math.round((answered / filteredQuestions.length) * 100);
+  }, [answers, filteredQuestions]);
+
+  const currentQuestion: QuizQuestion = filteredQuestions[current] || filteredQuestions[filteredQuestions.length - 1];
 
   const selectOption = (question: QuizQuestion, optionId: string) => {
     setError(null);
@@ -59,28 +69,34 @@ const QuizPage = () => {
       setError("Please choose an option to continue.");
       return;
     }
-    const isLast = current >= orderedQuestions.length - 1;
+    const isLast = current >= filteredQuestions.length - 1;
     if (!isLast) {
-      setCurrent((c) => Math.min(c + 1, orderedQuestions.length - 1));
+      setCurrent((c) => Math.min(c + 1, filteredQuestions.length - 1));
       return;
     }
 
-    const computed = calculateScores(answers, orderedQuestions);
+    // Always compute and navigate — don't block on Firebase
+    const computed = calculateScores(answers, filteredQuestions);
     const narrative = mapResultsToNarrative(computed);
     const payload = { answers, computed, narrative, completedAt: Date.now() };
+
     saveQuizResultLocal(payload);
     clearQuizState();
-    try {
-      await saveQuizResult(payload);
-    } catch {
-      // ignore if offline / firebase disabled
-    }
+
+    // Fire-and-forget Firebase, don't await
+    saveQuizResult(payload).catch(() => {});
+
     navigate("/quiz/result", { state: payload });
   };
 
   const goPrev = () => setCurrent((c) => Math.max(c - 1, 0));
 
-  const resumePrevious = () => setResumable(false);
+  const resumePrevious = () => {
+     setResumable(false);
+     // Find the first unanswered question in the current filtered set
+     const firstUnanswered = filteredQuestions.findIndex(q => !(answers[q.id]?.length));
+     setCurrent(firstUnanswered === -1 ? filteredQuestions.length - 1 : firstUnanswered);
+  };
 
   const retake = () => {
     clearQuizState();
@@ -91,137 +107,136 @@ const QuizPage = () => {
 
   const existingResult = loadQuizResultLocal();
 
-  const totalSteps = Math.max(...orderedQuestions.map((q) => q.step));
+  const totalSteps = filteredQuestions.length;
+
 
   return (
-    <div className="page-container py-8 space-y-6">
+    <div className="page-container py-4 space-y-4">
       <Seo
         title="Career Quiz After 12th | Get Personalized Course & Stream Matches"
         description="Answer quick questions to receive best-fit stream and course matches with reasons, jobs, and next steps tailored to your interests."
         canonicalPath="/quiz"
       />
-      <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-white/5 via-primary/10 to-accent/10 p-6">
+      
+      <div className="relative overflow-hidden rounded-[1.5rem] border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-between gap-3 flex-wrap"
+          className="flex items-center justify-between gap-4 flex-wrap relative z-10"
         >
-          <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-primary">Career Guidance AI Quiz</div>
-            <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">Find your future path</h1>
-            <p className="text-sm text-gray-700">
-              Answer a few focused questions. We’ll score, explain signals, and recommend your top 3 streams.
-            </p>
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full bg-primary/5 border border-primary/10 text-primary text-[9px] font-bold uppercase tracking-widest mb-1.5">
+              <span className="flex h-1 w-1 rounded-full bg-primary animate-pulse" /> AI Enhanced Guidance
+            </div>
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight leading-none">Find your future path</h1>
           </div>
           {existingResult ? (
-            <Button variant="outline" onClick={() => navigate("/quiz/result")}>
+            <Button variant="outline" className="rounded-full px-4 h-8 text-xs" onClick={() => navigate("/quiz/result")}>
               View last result
             </Button>
           ) : null}
         </motion.div>
-        <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute -left-6 -top-8 h-24 w-24 rounded-full bg-primary/20 blur-3xl" />
+        
+        <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
-      <div className="space-y-2">
-        <div className="flex items-center justify-between text-xs text-gray-500">
-          <span>
-            Step {currentQuestion?.step} of {totalSteps}
-          </span>
-          <span>{progress}% complete</span>
-        </div>
-        <div className="relative h-3 w-full rounded-full bg-gray-50 overflow-hidden">
-          <motion.div
-            className="h-full bg-gradient-to-r from-primary to-accent"
-            initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
-            transition={{ ease: "easeOut", duration: 0.4 }}
-          />
-          <div className="absolute inset-0 flex justify-between px-1">
-            {[...Array(totalSteps)].map((_, i) => (
-              <span
-                key={i}
-                className={`h-3 w-px ${currentQuestion?.step > i ? "bg-white/70" : "bg-gray-100"}`}
-              />
-            ))}
+      <div className="max-w-4xl mx-auto w-full space-y-4">
+        <div className="space-y-1.5">
+          <div className="flex items-center justify-between text-[9px] font-bold uppercase tracking-widest text-gray-400">
+            <span>
+              Question {current + 1} / {filteredQuestions.length}
+            </span>
+            <span className="text-primary">{progress}%</span>
+          </div>
+          <div className="relative h-1.5 w-full rounded-full bg-gray-100 overflow-hidden">
+            <motion.div
+              className="h-full bg-primary"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ ease: "easeOut", duration: 0.6 }}
+            />
           </div>
         </div>
-      </div>
 
-      {resumable ? (
-        <Card title="Resume quiz">
-          <div className="flex items-center justify-between text-sm text-gray-700">
-            <span>We found your previous answers. Continue where you left off?</span>
-            <div className="flex gap-2">
-              <Button variant="ghost" onClick={retake}>
-                Start over
-              </Button>
-              <Button onClick={resumePrevious}>Resume</Button>
+        {resumable ? (
+          <Card className="rounded-2xl border-primary/20 bg-primary/5 p-4 py-3">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+              <div>
+                <h3 className="font-bold text-gray-900 text-sm">Resume previous progress?</h3>
+              </div>
+              <div className="flex gap-2">
+                <Button variant="ghost" className="rounded-full px-4 h-8 text-xs font-semibold" onClick={retake}>
+                  Start over
+                </Button>
+                <Button className="rounded-full px-5 h-8 text-xs font-bold" onClick={resumePrevious}>Resume</Button>
+              </div>
             </div>
-          </div>
-        </Card>
-      ) : null}
+          </Card>
+        ) : null}
 
-      <AnimatePresence mode="wait">
-        {currentQuestion ? (
-          <motion.div
-            key={currentQuestion.id}
-            initial={{ opacity: 0, y: 12, scale: 0.99 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -12, scale: 0.99 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-          >
-            <Card
-              title={
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 text-primary font-semibold">
-                    {current + 1}
-                  </span>
-                  <div>
-                    <div className="text-xs uppercase text-gray-500">{currentQuestion.group}</div>
-                    <div className="text-gray-900">{currentQuestion.question}</div>
-                  </div>
-                </div>
-              }
+        <AnimatePresence mode="wait">
+          {currentQuestion ? (
+            <motion.div
+              key={currentQuestion.id}
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="space-y-4"
             >
-              <div className="space-y-3">
+              <div className="space-y-1">
+                <div className="text-[9px] font-bold uppercase tracking-[0.2em] text-primary/80">{currentQuestion.group} assessment</div>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
+                  {currentQuestion.question}
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {currentQuestion.options.map((opt, idx) => {
                   const selected = (answers[currentQuestion.id] ?? []).includes(opt.id);
                   return (
-                    <motion.button
+                    <QuizOption
                       key={opt.id}
-                      onClick={() => selectOption(currentQuestion, opt.id)}
-                      className={`w-full text-left border rounded-xl px-4 py-3 transition backdrop-blur ${
-                        selected
-                          ? "border-primary/60 bg-primary/10 text-gray-900 shadow-[0_10px_40px_-20px_rgba(79,70,229,0.7)]"
-                          : "border-gray-200 bg-gray-50 hover:border-white/25 text-gray-800"
-                      }`}
-                      whileHover={{ y: -2, scale: 1.01 }}
-                      whileTap={{ scale: 0.995 }}
-                    >
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="font-medium">{opt.text}</div>
-                        <div className="flex items-center gap-2 text-xs text-gray-500">
-                          <span className="h-2 w-2 rounded-full bg-primary/70" />
-                          {selected ? "Chosen" : `Option ${idx + 1}`}
-                        </div>
-                      </div>
-                      {opt.hint ? <div className="text-xs text-gray-500 mt-1">{opt.hint}</div> : null}
-                    </motion.button>
+                      id={opt.id}
+                      text={opt.text}
+                      hint={opt.hint}
+                      index={idx}
+                      isSelected={selected}
+                      onSelect={() => selectOption(currentQuestion, opt.id)}
+                    />
                   );
                 })}
               </div>
-              {error ? <div className="text-xs text-rose-300 mt-3">{error}</div> : null}
-              <div className="flex items-center justify-between mt-5">
-                <Button variant="ghost" onClick={goPrev} disabled={current === 0}>
-                  Previous
+
+              {error ? (
+                <motion.div 
+                  initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}
+                  className="p-2 rounded-lg bg-red-50 border border-red-100 text-red-600 text-[10px] font-medium text-center"
+                >
+                  {error}
+                </motion.div>
+              ) : null}
+
+              <div className="flex items-center justify-between pt-2">
+                <Button 
+                  variant="ghost" 
+                  className="rounded-full px-6 h-10 text-xs text-gray-500 hover:text-gray-900" 
+                  onClick={goPrev} 
+                  disabled={current === 0}
+                >
+                  Back
                 </Button>
-                <Button onClick={goNext}>{current === orderedQuestions.length - 1 ? "See my results" : "Next"}</Button>
+                <Button 
+                  className="rounded-full px-8 h-10 text-sm font-bold shadow-md shadow-primary/20" 
+                  onClick={goNext}
+                >
+                  {current === filteredQuestions.length - 1 ? "Analyze my path" : "Next Question"}
+                </Button>
               </div>
-            </Card>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

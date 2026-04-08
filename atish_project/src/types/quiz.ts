@@ -30,6 +30,10 @@ export type QuizQuestion = {
   questionWeight?: number;
   enabled?: boolean;
   options: QuizOption[];
+  dependsOn?: {
+    questionId: string;
+    optionId: string;
+  };
 };
 
 export type QuizAnswer = {

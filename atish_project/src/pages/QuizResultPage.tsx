@@ -7,20 +7,42 @@ import { calculateScores } from "../quiz/quizEngine";
 import { mapResultsToNarrative } from "../quiz/quizResultMapper";
 import { quizQuestions } from "../data/quizQuestions";
 import { clearQuizState, loadQuizResultLocal, saveQuizResultLocal } from "../utils/quizStorage";
+import { predictCareerWithAI, type AIQuizPrediction } from "../services/quizAIPredictionService";
 import { Seo } from "../components/Seo";
 
 const QuizResultPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [resultData] = useState<any>(location.state ?? loadQuizResultLocal());
+  const [aiPrediction, setAiPrediction] = useState<AIQuizPrediction | null>(resultData?.aiPrediction ?? null);
+  const [isAiLoading, setIsAiLoading] = useState(false);
 
   useEffect(() => {
     if (!resultData || !resultData.answers) {
       navigate("/quiz");
-    } else {
-      saveQuizResultLocal(resultData);
+      return;
     }
-  }, [resultData, navigate]);
+    
+    saveQuizResultLocal({ ...resultData, aiPrediction });
+
+    // Lazy load AI prediction if missing
+    if (!aiPrediction && !isAiLoading) {
+      setIsAiLoading(true);
+      const filterQs = [...quizQuestions].filter((q) => {
+        if (!q.dependsOn) return true;
+        return (resultData.answers[q.dependsOn.questionId] ?? []).includes(q.dependsOn.optionId);
+      });
+
+      predictCareerWithAI(resultData.answers, filterQs).then(pred => {
+        setAiPrediction(pred);
+        setIsAiLoading(false);
+        // Persist with AI result
+        saveQuizResultLocal({ ...resultData, aiPrediction: pred });
+      }).catch(() => {
+        setIsAiLoading(false);
+      });
+    }
+  }, [resultData, navigate, aiPrediction, isAiLoading]);
 
   const computed = useMemo(() => {
     if (!resultData?.answers) return null;
@@ -53,27 +75,81 @@ const QuizResultPage = () => {
   if (!computed) return null;
 
   return (
-    <div className="page-container py-8 space-y-6">
+    <div className="page-container py-8 space-y-8 max-w-5xl mx-auto">
       <Seo
         title="Quiz Results | CareerCompass"
         description="See your personalized stream recommendations based on the CareerCompass career quiz."
       />
-      <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-primary/15 via-white/5 to-accent/15 p-6">
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-primary">Your Recommendations</div>
-            <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">Top career matches</h1>
-            <p className="text-sm text-gray-700">Based on your answers, here are the best-fit streams.</p>
+      
+      {/* AI Deep Insight Header or Loader */}
+      {aiPrediction ? (
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="relative overflow-hidden rounded-[2.5rem] border border-primary/20 bg-primary/5 p-8 sm:p-10 shadow-sm"
+        >
+          <div className="relative z-10 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest">
+              ✨ AI Counselor Deep Insight
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+              The Path for Your Unique Potential
+            </h1>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl italic">
+              "{aiPrediction.insight}"
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {aiPrediction.topStreams.map((s: string) => (
+                <span key={s} className="px-4 py-1.5 rounded-full bg-white border border-primary/20 text-primary text-xs font-bold shadow-sm">
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="flex gap-2">
-            <Button variant="ghost" onClick={share}>
-              Share
-            </Button>
-            <Button onClick={retake}>Retake quiz</Button>
+          <div className="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-primary/10 blur-[100px]" />
+          <div className="absolute -left-10 -top-10 h-64 w-64 rounded-full bg-accent/10 blur-[100px]" />
+        </motion.div>
+      ) : isAiLoading ? (
+        <motion.div 
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          className="relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gray-50/50 p-8 sm:p-10 text-center space-y-4 border-dashed"
+        >
+          <div className="flex justify-center">
+            <div className="w-10 h-10 rounded-full border-2 border-primary/20 border-t-primary animate-spin" />
+          </div>
+          <div className="space-y-1">
+            <h3 className="text-xl font-bold text-gray-900">Consulting AI Counselor...</h3>
+            <p className="text-sm text-gray-500">Generating your personalized deep insights using local intelligence.</p>
+          </div>
+        </motion.div>
+      ) : (
+        <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-primary/15 via-white/5 to-accent/15 p-6">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-primary">Your Recommendations</div>
+              <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">Top career matches</h1>
+              <p className="text-sm text-gray-700">Based on your answers, here are the best-fit streams.</p>
+            </div>
+            <div className="flex gap-2">
+              <Button variant="ghost" className="rounded-full" onClick={share}>
+                Share
+              </Button>
+              <Button className="rounded-full" onClick={retake}>Retake quiz</Button>
+            </div>
           </div>
         </div>
-        <div className="absolute -right-14 -bottom-16 h-36 w-36 rounded-full bg-accent/25 blur-3xl" />
-        <div className="absolute -left-10 -top-10 h-28 w-28 rounded-full bg-primary/25 blur-3xl" />
+      )}
+
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Technical Breakdown</h2>
+        {aiPrediction && (
+          <div className="flex gap-2">
+            <Button variant="ghost" className="rounded-full px-5" onClick={share}>
+              Share
+            </Button>
+            <Button className="rounded-full px-6" onClick={retake}>Retake quiz</Button>
+          </div>
+        )}
       </div>
 
       <div className="grid gap-3 md:grid-cols-3">
