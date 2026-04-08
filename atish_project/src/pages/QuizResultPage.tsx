@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { calculateScores } from "../quiz/quizEngine";
@@ -81,77 +81,50 @@ const QuizResultPage = () => {
         description="See your personalized stream recommendations based on the CareerCompass career quiz."
       />
 
-      {/* AI Deep Insight Header or Loader */}
-      {aiPrediction ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="relative overflow-hidden rounded-[2.5rem] border border-primary/20 bg-primary/5 p-8 sm:p-10 shadow-sm"
-        >
-          <div className="relative z-10 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest">
-              ✨ AI Counselor Deep Insight
-            </div>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl italic">
-              "{aiPrediction.insight}"
-            </p>
-            {/* Specific Career Cards */}
-            {aiPrediction.careers?.length > 0 && (
-              <div className="grid sm:grid-cols-3 gap-3 pt-2">
-                {aiPrediction.careers.map((career: any, i: number) => (
-                  <motion.div
-                    key={career.title}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.08 }}
-                    className="bg-white/80 backdrop-blur-sm rounded-2xl border border-primary/10 p-4 space-y-1.5 shadow-sm"
-                  >
-                    <div className="text-[10px] font-black uppercase tracking-widest text-primary/60">
-                      {i === 0 ? "🥇 Best Fit" : i === 1 ? "🥈 Strong Match" : "🥉 Good Option"}
-                    </div>
-                    <div className="font-bold text-gray-900 text-sm leading-tight">{career.title}</div>
-                    <div className="text-xs text-primary font-semibold bg-primary/8 border border-primary/15 px-2 py-0.5 rounded-full inline-block">
-                      {career.specialization}
-                    </div>
-                    <p className="text-xs text-gray-600 leading-relaxed pt-0.5">{career.why}</p>
-                  </motion.div>
-                ))}
+      {/* AI Deep Insight - Only show if ready, no loader/placeholder */}
+      <AnimatePresence>
+        {aiPrediction && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, scale: 0.98 }}
+            animate={{ opacity: 1, height: "auto", scale: 1 }}
+            exit={{ opacity: 0, height: 0 }}
+            className="relative overflow-hidden rounded-[2.5rem] border border-primary/20 bg-primary/5 p-8 sm:p-10 shadow-sm mb-8"
+          >
+            <div className="relative z-10 space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest">
+                ✨ AI Counselor Deep Insight
               </div>
-            )}
-          </div>
-          <div className="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-primary/10 blur-[100px]" />
-          <div className="absolute -left-10 -top-10 h-64 w-64 rounded-full bg-accent/10 blur-[100px]" />
-        </motion.div>
-      ) : isAiLoading ? (
-        <motion.div
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          className="relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gray-50/50 p-8 sm:p-10 text-center space-y-4 border-dashed"
-        >
-          <div className="flex justify-center">
-            <div className="w-10 h-10 rounded-full border-2 border-primary/20 border-t-primary animate-spin" />
-          </div>
-          <div className="space-y-1">
-            <h3 className="text-xl font-bold text-gray-900">Consulting AI Counselor...</h3>
-            <p className="text-sm text-gray-500">Generating your personalized deep insights using local intelligence.</p>
-          </div>
-        </motion.div>
-      ) : (
-        <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-primary/15 via-white/5 to-accent/15 p-6">
-          <div className="flex items-center justify-between gap-3 flex-wrap">
-            <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-primary">Your Recommendations</div>
-              <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">Top career matches</h1>
-              <p className="text-sm text-gray-700">Based on your answers, here are the best-fit streams.</p>
+              <p className="text-lg text-gray-700 leading-relaxed max-w-3xl italic">
+                "{aiPrediction.insight}"
+              </p>
+              {aiPrediction.careers?.length > 0 && (
+                <div className="grid sm:grid-cols-3 gap-3 pt-2">
+                  {aiPrediction.careers.map((career: any, i: number) => (
+                    <motion.div
+                      key={career.title}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.08 }}
+                      className="bg-white/80 backdrop-blur-sm rounded-2xl border border-primary/10 p-4 space-y-1.5 shadow-sm"
+                    >
+                      <div className="text-[10px] font-black uppercase tracking-widest text-primary/60">
+                        {i === 0 ? "🥇 Best Fit" : i === 1 ? "🥈 Strong Match" : "🥉 Good Option"}
+                      </div>
+                      <div className="font-bold text-gray-900 text-sm leading-tight">{career.title}</div>
+                      <div className="text-xs text-primary font-semibold bg-primary/8 border border-primary/15 px-2 py-0.5 rounded-full inline-block">
+                        {career.specialization}
+                      </div>
+                      <p className="text-xs text-gray-600 leading-relaxed pt-0.5">{career.why}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="flex gap-2">
-              <Button variant="ghost" className="rounded-full" onClick={share}>
-                Share
-              </Button>
-              <Button className="rounded-full" onClick={retake}>Retake quiz</Button>
-            </div>
-          </div>
-        </div>
-      )}
+            <div className="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-primary/10 blur-[100px]" />
+            <div className="absolute -left-10 -top-10 h-64 w-64 rounded-full bg-accent/10 blur-[100px]" />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Technical Breakdown</h2>
