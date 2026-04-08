@@ -22,7 +22,7 @@ const QuizResultPage = () => {
       navigate("/quiz");
       return;
     }
-    
+
     saveQuizResultLocal({ ...resultData, aiPrediction });
 
     // Lazy load AI prediction if missing
@@ -80,37 +80,50 @@ const QuizResultPage = () => {
         title="Quiz Results | CareerCompass"
         description="See your personalized stream recommendations based on the CareerCompass career quiz."
       />
-      
+
       {/* AI Deep Insight Header or Loader */}
       {aiPrediction ? (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           className="relative overflow-hidden rounded-[2.5rem] border border-primary/20 bg-primary/5 p-8 sm:p-10 shadow-sm"
         >
-          <div className="relative z-10 space-y-4">
+          <div className="relative z-10 space-y-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest">
               ✨ AI Counselor Deep Insight
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-              The Path for Your Unique Potential
-            </h1>
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl italic">
               "{aiPrediction.insight}"
             </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              {aiPrediction.topStreams.map((s: string) => (
-                <span key={s} className="px-4 py-1.5 rounded-full bg-white border border-primary/20 text-primary text-xs font-bold shadow-sm">
-                  {s}
-                </span>
-              ))}
-            </div>
+            {/* Specific Career Cards */}
+            {aiPrediction.careers?.length > 0 && (
+              <div className="grid sm:grid-cols-3 gap-3 pt-2">
+                {aiPrediction.careers.map((career: any, i: number) => (
+                  <motion.div
+                    key={career.title}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.08 }}
+                    className="bg-white/80 backdrop-blur-sm rounded-2xl border border-primary/10 p-4 space-y-1.5 shadow-sm"
+                  >
+                    <div className="text-[10px] font-black uppercase tracking-widest text-primary/60">
+                      {i === 0 ? "🥇 Best Fit" : i === 1 ? "🥈 Strong Match" : "🥉 Good Option"}
+                    </div>
+                    <div className="font-bold text-gray-900 text-sm leading-tight">{career.title}</div>
+                    <div className="text-xs text-primary font-semibold bg-primary/8 border border-primary/15 px-2 py-0.5 rounded-full inline-block">
+                      {career.specialization}
+                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed pt-0.5">{career.why}</p>
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </div>
           <div className="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-primary/10 blur-[100px]" />
           <div className="absolute -left-10 -top-10 h-64 w-64 rounded-full bg-accent/10 blur-[100px]" />
         </motion.div>
       ) : isAiLoading ? (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           className="relative overflow-hidden rounded-[2.5rem] border border-gray-100 bg-gray-50/50 p-8 sm:p-10 text-center space-y-4 border-dashed"
         >
