@@ -33,7 +33,7 @@ const HomePage = () => {
           Compare courses, simulate labs, and get parent-ready insights.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <Button as={Link} to="/streams" variant="primary" className="rounded-full px-6">
+          <Button as={Link} to="/career-quiz" variant="primary" className="rounded-full px-6">
             Build career <ArrowUpRight size={16} className="ml-1 opacity-70" />
           </Button>
           <Button as={Link} to="/about" variant="outline" className="rounded-full px-6 bg-white">

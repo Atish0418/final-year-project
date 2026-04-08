@@ -44,20 +44,24 @@ const CompareCoursesPage = () => {
     menuPortal: (base) => ({ ...base, zIndex: 9999 }),
     control: (base, state) => ({
       ...base,
-      backgroundColor: "var(--surface-card,rgba(115, 243, 255, 0.6))",
-      borderColor: state.isFocused ? "rgba(115, 243, 255, 0.6)" : "rgba(255,255,255,0.08)",
-      boxShadow: state.isFocused ? "0 0 0 2px rgba(115, 243, 255, 0.25)" : "none",
-      minHeight: 40,
+      backgroundColor: "#ffffff",
+      borderColor: state.isFocused ? "#111827" : "#e5e7eb",
+      boxShadow: state.isFocused ? "0 0 0 2px rgba(17,24,39,0.08)" : "none",
+      minHeight: 44,
       borderRadius: 12,
-      ":hover": { borderColor: "rgba(115, 243, 255, 0.6)" },
+      fontSize: 14,
+      cursor: "pointer",
+      transition: "border-color 0.15s",
+      ":hover": { borderColor: "#9ca3af" },
     }),
     menu: (base) => ({
       ...base,
-      backgroundColor: "var(--surface-card, rgba(65, 81, 82, 1))",
-      border: "1px solid rgba(255,255,255,0.08)",
-      borderRadius: 12,
+      backgroundColor: "#ffffff",
+      border: "1px solid #e5e7eb",
+      borderRadius: 14,
+      boxShadow: "0 8px 30px -4px rgba(0,0,0,0.10), 0 2px 8px -2px rgba(0,0,0,0.06)",
       overflow: "hidden",
-      zIndex: 30,
+      zIndex: 9999,
     }),
     menuList: (base) => ({
       ...base,
@@ -67,21 +71,23 @@ const CompareCoursesPage = () => {
     option: (base, state) => ({
       ...base,
       backgroundColor: state.isSelected
-        ? "rgba(115, 243, 255, 0.18)"
+        ? "#f3f4f6"
         : state.isFocused
-          ? "rgba(115, 243, 255, 0.10)"
+          ? "#f9fafb"
           : "transparent",
-      color: "#000",
+      color: state.isSelected ? "#111827" : "#374151",
+      fontWeight: state.isSelected ? 600 : 400,
       borderRadius: 8,
-      padding: "10px 12px",
+      padding: "9px 12px",
+      fontSize: 13,
       cursor: "pointer",
     }),
-    placeholder: (base) => ({ ...base, color: "#000" }),
-    singleValue: (base) => ({ ...base, color: "white" }),
-    input: (base) => ({ ...base, color: "white" }),
-    dropdownIndicator: (base) => ({ ...base, color: "#000" }),
+    placeholder: (base) => ({ ...base, color: "#9ca3af", fontSize: 13 }),
+    singleValue: (base) => ({ ...base, color: "#111827", fontSize: 14, fontWeight: 500 }),
+    input: (base) => ({ ...base, color: "#111827", fontSize: 14 }),
+    dropdownIndicator: (base) => ({ ...base, color: "#9ca3af", padding: "0 8px" }),
     indicatorSeparator: () => ({ display: "none" }),
-    clearIndicator: (base) => ({ ...base, color: "#000" }),
+    clearIndicator: (base) => ({ ...base, color: "#9ca3af", ":hover": { color: "#374151" } }),
   };
 
   const Option = (props: any) => (
