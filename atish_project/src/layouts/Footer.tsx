@@ -33,9 +33,7 @@ const Footer = () => {
     {
       title: "AI & Career Tools",
       links: [
-        { to: "/career-roadmap", label: "AI Career Roadmap" },
         { to: "/career-ai", label: "Career AI Chatbot" },
-        { to: "/resume-builder", label: "Smart Resume Builder" },
         { to: "/cover-letter", label: "AI Cover Letter" },
         { to: "/mentors", label: "Connect with Mentors" },
       ]
@@ -53,7 +51,6 @@ const Footer = () => {
     {
       title: "Resources & Support",
       links: [
-        { to: "/explore-3d", label: "Interactive 3D" },
         { to: "/career-quiz", label: "Take Career Quiz" },
         { to: "/compare-courses", label: "Course Comparison" },
         { to: "/colleges", label: "Top Indian Colleges" },
