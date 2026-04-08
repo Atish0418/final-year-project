@@ -48,39 +48,19 @@ const HomePage = () => {
            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" alt="Students" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50" />
            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
            
-           <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
-             <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Event</span>
-             <span className="text-sm font-medium text-gray-900">Building career &gt;</span>
-           </div>
+
            
            <div className="absolute bottom-8 left-8 text-left max-w-lg z-10">
-             <div className="inline-flex items-center px-3 py-1 rounded-full border border-white/30 text-gray-900/90 text-xs mb-4 backdrop-blur-sm">
+             <div className="inline-flex items-center px-3 py-1 rounded-full border border-white/30 text-white text-xs mb-4 bg-white/10 backdrop-blur-sm">
                {totalCourses} Opportunities
              </div>
-             <h3 className="text-2xl sm:text-3xl text-gray-900 font-medium leading-tight mb-3">Efficiently transform your <br/> candidate experience.</h3>
-             <p className="text-gray-900/80 text-sm leading-relaxed max-w-md hidden sm:block">CareerCompass is the Hiring Experience Platform that automates interview scheduling to perfection, so you stay focused on the talent.</p>
+             <h3 className="text-2xl sm:text-3xl text-white font-semibold leading-tight mb-3">Efficiently transform your <br/> candidate experience.</h3>
+             <p className="text-white/75 text-sm leading-relaxed max-w-md hidden sm:block">CareerCompass is the Hiring Experience Platform that automates interview scheduling to perfection, so you stay focused on the talent.</p>
            </div>
            
-           <div className="absolute top-6 right-6 bg-gray-100 backdrop-blur-md text-gray-900 border border-white/30 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm text-sm">
-             Match yours <ArrowUpRight size={14} />
-           </div>
 
-           <div className="absolute bottom-8 right-8 flex flex-col gap-3 items-end z-10 hidden md:flex">
-              <div className="bg-white rounded-full p-1.5 pr-4 flex items-center gap-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] transform -translate-x-12">
-                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">C</div>
-                 <div className="text-xs leading-tight">
-                   <div className="font-semibold text-gray-900">Brooklyn Simmons</div>
-                   <div className="text-gray-500">Barone LLC.</div>
-                 </div>
-              </div>
-              <div className="bg-white rounded-full p-1.5 pr-4 flex items-center gap-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] transform translate-x-4">
-                 <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xs">E</div>
-                 <div className="text-xs leading-tight">
-                   <div className="font-semibold text-gray-900">Eleanor Pena</div>
-                   <div className="text-gray-500">Marketing Coord.</div>
-                 </div>
-              </div>
-           </div>
+
+
          </div>
       </section>
 
