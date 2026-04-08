@@ -18,7 +18,7 @@ const HomePage = () => {
   return (
     <div className="pb-16 space-y-16">
       <Seo
-        title="FuturePath 3D | Career Guidance After 12th with Courses, Colleges & Jobs"
+        title="Compare Courses | CareerCompass | Career Guidance After 12th with Courses, Colleges & Jobs"
         description="Discover courses, colleges, and career paths after 12th across engineering, medical, arts, commerce, government, diplomas, and more with guided tools and comparisons."
         canonicalPath="/"
       />
@@ -58,7 +58,7 @@ const HomePage = () => {
                {totalCourses} Opportunities
              </div>
              <h3 className="text-2xl sm:text-3xl text-gray-900 font-medium leading-tight mb-3">Efficiently transform your <br/> candidate experience.</h3>
-             <p className="text-gray-900/80 text-sm leading-relaxed max-w-md hidden sm:block">FuturePath 3D is the Hiring Experience Platform that automates interview scheduling to perfection, so you stay focused on the talent.</p>
+             <p className="text-gray-900/80 text-sm leading-relaxed max-w-md hidden sm:block">CareerCompass is the Hiring Experience Platform that automates interview scheduling to perfection, so you stay focused on the talent.</p>
            </div>
            
            <div className="absolute top-6 right-6 bg-gray-100 backdrop-blur-md text-gray-900 border border-white/30 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm text-sm">

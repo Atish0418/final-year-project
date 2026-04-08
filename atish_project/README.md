@@ -1,7 +1,7 @@
-# FuturePath 3D 🚀
+# CareerCompass 🚀
 ### The Next-Generation AI-Powered Career Platform
 
-**FuturePath 3D** is a premium, all-in-one career guidance ecosystem designed specifically for students in India (and beyond). By combining interactive 3D stream exploration with state-of-the-art AI career tools, it helps students transition from school to a professional career with clarity.
+**CareerCompass** is a premium, all-in-one career guidance ecosystem designed specifically for students in India (and beyond). By combining interactive stream exploration with state-of-the-art AI career tools, it helps students transition from school to a professional career with clarity.
 
 ---
 
@@ -73,12 +73,12 @@ To run the career platform without an internet connection or API keys:
 3. **Allow CORS** (Required for browser access):
    - **Windows (PowerShell):**
      `[System.Environment]::SetEnvironmentVariable('OLLAMA_ORIGINS', '*', 'User')`
-4. **Restart Ollama** and the FuturePath 3D server.
+4. **Restart Ollama** and the CareerCompass server.
 
 ---
 
 ## 🌍 Localization & Indian Context
-FuturePath 3D is optimized for the Indian academic landscape:
+CareerCompass is optimized for the Indian academic landscape:
 - Includes regional exams (NEET, JEE, UPSC).
 - Specialized filters for Indian departments and streams.
 - Localized footer with "Made in India" branding and corporate links.

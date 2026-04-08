@@ -55,8 +55,8 @@ const QuizResultPage = () => {
   return (
     <div className="page-container py-8 space-y-6">
       <Seo
-        title="Quiz Results | FuturePath 3D"
-        description="See your personalized stream recommendations based on the FuturePath 3D career quiz."
+        title="Quiz Results | CareerCompass"
+        description="See your personalized stream recommendations based on the CareerCompass career quiz."
       />
       <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-r from-primary/15 via-white/5 to-accent/15 p-6">
         <div className="flex items-center justify-between gap-3 flex-wrap">

@@ -36,7 +36,7 @@ const FavoritesPage = () => {
 
   return (
     <div className="page-container py-12 space-y-6">
-      <Seo title="Favorites | FuturePath 3D" description="Saved streams and departments for quick access." />
+      <Seo title="Favorites | CareerCompass" description="Saved streams and departments for quick access." />
       <SectionHeader
         eyebrow="Favorites"
         title="Saved streams and departments"

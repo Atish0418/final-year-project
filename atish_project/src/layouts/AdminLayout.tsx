@@ -20,7 +20,7 @@ const AdminLayout = () => {
               <ShieldCheck size={20} />
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-900">FuturePath 3D</div>
+              <h3 className="text-xl font-bold text-gray-900">CareerCompass Admin</h3>
               <div className="text-xs text-gray-500">Admin Console</div>
             </div>
           </div>

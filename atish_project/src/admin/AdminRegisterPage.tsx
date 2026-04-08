@@ -45,8 +45,8 @@ const AdminRegisterPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center py-10 px-4 bg-[#D5D3C8] relative">
       <Seo
-        title="Register | FuturePath 3D"
-        description="Create your FuturePath 3D account."
+        title="Register | CareerCompass"
+        description="Create your CareerCompass account."
         canonicalPath="/admin/register"
         noIndex
       />
@@ -68,7 +68,7 @@ const AdminRegisterPage = () => {
             <Rocket size={24} className="text-white" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
-          <p className="text-gray-500 text-sm mt-2">Join FuturePath 3D to get started</p>
+          <p className="text-gray-500 text-sm mt-2">Join CareerCompass to get started</p>
         </div>
 
         <form onSubmit={onSubmit} className="space-y-4">
@@ -82,7 +82,7 @@ const AdminRegisterPage = () => {
               className="w-full h-11 rounded-full border border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="name@futurepath.com"
+              placeholder="name@careercompass.com"
             />
           </div>
           <div className="space-y-1">

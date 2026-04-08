@@ -6,7 +6,7 @@ const FutureJobsPage = () => {
   return (
     <div className="page-container py-12 space-y-6">
       <Seo
-        title="Future Jobs | FuturePath 3D"
+        title="Future Jobs | CareerCompass"
         description="Explore future-facing careers, growth outlook, and required skills to help learners plan their path."
       />
       <SectionHeader

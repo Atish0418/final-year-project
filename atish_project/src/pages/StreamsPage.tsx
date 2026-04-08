@@ -19,7 +19,7 @@ const StreamsPage = () => {
 
   return (
     <div className="page-container py-12 space-y-6">
-      <Seo title="Streams | FuturePath 3D" description="Browse all higher-education streams and open departments to compare details." />
+      <Seo title="Streams | CareerCompass" description="Browse all higher-education streams and open departments to compare details." />
       <SectionHeader
         eyebrow="Streams"
         title="All higher-education streams after 12th"

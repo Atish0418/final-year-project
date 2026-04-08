@@ -11,7 +11,7 @@ const truncate = (text: string | undefined, max = 180) => {
 };
 
 export const buildDepartmentSeo = (dept: Department) => {
-  const title = `${dept.name} Course Details | Eligibility, Subjects & Scope | FuturePath 3D`;
+  const title = `${dept.name} Course Details | Eligibility, Subjects & Scope | CareerCompass`;
   const description = truncate(dept.futureScope || dept.overview, 180);
   const canonicalPath = `/department/${dept.slug ?? dept.id}`;
   const canonical = `${SITE_BASE.replace(/\/$/, "")}${canonicalPath.startsWith("/") ? "" : "/"}${canonicalPath}`;

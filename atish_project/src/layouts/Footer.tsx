@@ -84,12 +84,12 @@ const Footer = () => {
                 <Rocket size={20} fill="currentColor" />
               </div>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-500">
-                FuturePath 3D
+                CareerCompass
               </span>
             </Link>
             
             <p className="text-gray-500 text-lg leading-relaxed max-w-sm">
-              Empowering Indian students with AI-driven insights and immersive 3D experiences to navigate their 12th+ career roadmap with absolute clarity.
+              Empowering Indian students with AI-driven insights and immersive experiences to navigate their 12th+ career roadmap with absolute clarity.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -144,7 +144,7 @@ const Footer = () => {
         <div className="pt-10 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
            <div className="flex flex-col items-center md:items-start gap-2">
               <p className="text-gray-500 text-sm font-medium">
-                © {new Date().getFullYear()} FuturePath 3D Edutech Pvt. Ltd.
+                © {new Date().getFullYear()} CareerCompass Edutech Pvt. Ltd.
               </p>
               <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-primary/60">
                  Made with <Heart size={12} className="text-red-500 fill-red-500 animate-pulse" /> in India for the World

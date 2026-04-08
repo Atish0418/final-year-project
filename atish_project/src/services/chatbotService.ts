@@ -6,7 +6,7 @@ const OLLAMA_MODEL = import.meta.env.VITE_OLLAMA_MODEL || "llama3.2";
 
 export async function chatWithAI(message: string, history: any[] = []) {
   const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
-  const systemPrompt = "You are PathShala AI, a helpful career advisor for FuturePath 3D. Your goal is to help students explore career paths, understand stream choices (Engineering, Medical, Commerce, etc.), and provide guidance on college selections and career roadmap building. Keep your answers concise, professional, and friendly.";
+  const systemPrompt = "You are PathShala AI, a helpful career advisor for CareerCompass. Your goal is to help students explore career paths, understand stream choices (Engineering, Medical, Commerce, etc.), and provide guidance on college selections and career roadmap building. Keep your answers concise, professional, and friendly.";
 
   try {
     if (USE_LOCAL_AI) {

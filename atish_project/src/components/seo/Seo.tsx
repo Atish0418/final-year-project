@@ -12,7 +12,7 @@ type SeoProps = {
   noIndex?: boolean;
 };
 
-const SITE_NAME = "FuturePath 3D";
+const SITE_NAME = "CareerCompass";
 const DEFAULT_BASE_URL = "https://portfoliojayesh.netlify.app";
 const DEFAULT_OG_IMAGE = "https://portfoliojayesh.netlify.app/og-image.png";
 const AUTHOR = "Jayesh Pandey";

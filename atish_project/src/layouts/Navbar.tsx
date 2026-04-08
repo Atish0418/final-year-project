@@ -49,7 +49,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="shrink-0 flex items-center gap-2 text-xl font-bold tracking-tight text-gray-900 min-w-0">
           <Rocket size={24} className="text-gray-900" fill="currentColor" />
-          <span>FuturePath 3D</span>
+          <span>CareerCompass</span>
         </Link>
 
         {/* Center Links */}

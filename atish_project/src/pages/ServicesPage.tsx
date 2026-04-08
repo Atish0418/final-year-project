@@ -11,8 +11,8 @@ const ServicesPage = () => {
   return (
     <div className="page-container py-12 space-y-8">
       <Seo
-        title="Our Services | FuturePath 3D"
-        description="Explore the premium services FuturePath 3D offers."
+        title="Our Services | CareerCompass"
+        description="Explore the premium services CareerCompass offers."
       />
       <SectionHeader
         eyebrow="What We Do"

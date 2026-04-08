@@ -5,8 +5,8 @@ const ContactPage = () => {
   return (
     <div className="page-container py-12 space-y-8">
       <Seo
-        title="Contact Us | FuturePath 3D"
-        description="Get in touch with FuturePath 3D for career guidance queries and support."
+        title="Contact Us | CareerCompass"
+        description="Get in touch with CareerCompass for career guidance queries and support."
       />
       <SectionHeader
         eyebrow="Reach Out"

@@ -112,7 +112,7 @@ const CompareCoursesPage = () => {
 
   return (
     <div className="page-container py-12 space-y-8 overflow-x-hidden">
-      <Seo title="Compare Courses | FuturePath 3D" description="Compare departments side by side on duration, eligibility, subjects, skills, and future scope." />
+      <Seo title="Compare Courses | CareerCompass" description="Compare departments side by side on duration, eligibility, subjects, skills, and future scope." />
       <SectionHeader
         eyebrow="Compare courses"
         title="Compare two or three departments side by side."

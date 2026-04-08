@@ -35,12 +35,12 @@ const AboutPage = () => {
   return (
     <div className="page-container py-12 space-y-8">
       <Seo
-        title="About | FuturePath 3D"
-        description="Why FuturePath 3D helps students choose the right course after 12th with clear guidance, comparisons, and college discovery."
+        title="About | CareerCompass"
+        description="Why CareerCompass helps students choose the right course after 12th with clear guidance, comparisons, and college discovery."
       />
       <SectionHeader
         eyebrow="About"
-        title="Why FuturePath 3D?"
+        title="Why CareerCompass?"
         subtitle="Helping students choose the right career path after 12th."
       />
 

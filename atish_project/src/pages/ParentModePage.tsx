@@ -11,7 +11,7 @@ const ParentModePage = () => {
 
   return (
     <div className="page-container py-12 space-y-8">
-      <Seo title="Parent Mode | FuturePath 3D" description="Simple course summaries for parents: value, stability, duration, and fit." />
+      <Seo title="Parent Mode | CareerCompass" description="Simple course summaries for parents: value, stability, duration, and fit." />
       <SectionHeader
         eyebrow="Parent mode"
         title="Understand the value of each course in simple language."
