@@ -1,4 +1,4 @@
-import { RoadmapDashboard } from "../components/roadmap/roadmap-dashboard";
+// import { RoadmapDashboard } from "../components/roadmap/roadmap-dashboard";
 import { Seo } from "@/components/seo/Seo";
 
 const RoadmapPage = () => {
@@ -18,7 +18,7 @@ const RoadmapPage = () => {
           </p>
         </div>
         
-        <RoadmapDashboard />
+        {/* <RoadmapDashboard /> */}
       </div>
     </>
   );

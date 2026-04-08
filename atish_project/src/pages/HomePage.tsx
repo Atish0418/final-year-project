@@ -179,21 +179,17 @@ const HomePage = () => {
               </div>
               <h2 className="text-4xl sm:text-5xl font-medium text-white leading-[1.1] mb-6"> Our Intelligence, <br/> Your Career Growth.</h2>
               <p className="text-gray-400 text-lg mb-10 max-w-lg leading-relaxed">
-                Leverage advanced Generative AI to build roadmaps, craft professional resumes, and get real-time career advice from our intelligent assistant.
+                Leverage advanced Generative AI to get real-time career advice and professional guidance from our intelligent assistant.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button as={Link} to="/career-ai" variant="primary" className="rounded-full h-14 px-8 text-lg font-bold">
                    Try Career AI <ArrowRight size={20} className="ml-2" />
-                </Button>
-                <Button as={Link} to="/resume-builder" variant="outline" className="rounded-full h-14 px-8 text-lg font-bold border-white/20 text-white hover:bg-white/10">
-                   Resume Builder
                 </Button>
               </div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { title: "Smart Roadmaps", desc: "Interactive AI-generated learning paths.", color: "bg-blue-500/10", icon: <ArrowRight className="text-blue-400" /> },
                 { title: "AI Cover Letters", desc: "Tailored drafts for any job description.", color: "bg-purple-500/10", icon: <Sparkles className="text-purple-400" /> },
                 { title: "Mentor Access", desc: "Connect with experts from top firms.", color: "bg-emerald-500/10", icon: <ArrowUpRight className="text-emerald-400" /> },
                 { title: "Mock Interviews", desc: "Prepare with AI-driven questioning.", color: "bg-orange-500/10", icon: <ArrowRight className="text-orange-400" /> }

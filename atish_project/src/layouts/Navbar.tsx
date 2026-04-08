@@ -12,11 +12,8 @@ const mainLinks = [
   { to: "/", labelKey: "nav_home" },
   { to: "/streams", labelKey: "nav_streams" },
   { to: "/departments", labelKey: "nav_departments" },
-  { to: "/explore-3d", labelKey: "nav_explore" },
   { to: "/compare-courses", labelKey: "nav_compare" },
   { to: "/career-quiz", labelKey: "nav_quiz" },
-  { to: "/career-roadmap", labelKey: "nav_roadmap" },
-  { to: "/resume-builder", labelKey: "nav_resume" },
 ];
 
 const careerToolsLinks = [
