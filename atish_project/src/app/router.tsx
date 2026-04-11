@@ -42,6 +42,8 @@ import CoverLetterPage from "../pages/CoverLetterPage";
 import ChatbotPage from "../pages/ChatbotPage";
 import MentorsPage from "../pages/MentorsPage";
 
+import CareerPredictionPage from "../pages/CareerPredictionPage";
+
 export const router = createHashRouter(
   createRoutesFromElements(
     <>
@@ -94,6 +96,7 @@ export const router = createHashRouter(
         <Route path="career-ai" element={<ChatbotPage />} />
         <Route path="mentors" element={<MentorsPage />} />
         <Route path="career-roadmap" element={<RoadmapPage />} />
+        <Route path="career-prediction" element={<CareerPredictionPage />} />
       </Route>
       <Route path="/admin/login" element={<AdminLoginPage />} />
       <Route path="/admin/register" element={<AdminRegisterPage />} />

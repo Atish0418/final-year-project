@@ -107,7 +107,6 @@ const QuizPage = () => {
 
   const existingResult = loadQuizResultLocal();
 
-  const totalSteps = filteredQuestions.length;
 
 
   return (

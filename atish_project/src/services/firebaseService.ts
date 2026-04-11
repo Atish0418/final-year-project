@@ -4,7 +4,7 @@ import { departments as localDepartments } from "../data/departments";
 import { jobs as localJobs } from "../data/jobs";
 import { quizQuestions as localQuiz } from "../data/quizQuestions";
 import type { QuizQuestion } from "../types/quiz";
-import { collection, addDoc, doc, setDoc, deleteDoc } from "firebase/firestore";
+import { collection, addDoc, doc, setDoc, deleteDoc, query, where, getDocs, orderBy } from "firebase/firestore";
 import { initFirebase } from "../lib/firebase";
 
 export const getStreams = async () => {
@@ -107,4 +107,32 @@ export const deleteEntity = async (col: string, id: string) => {
   if (!firebaseEnabled) return Promise.resolve();
   const db = withDb();
   await deleteDoc(doc(db, col, id));
+};
+
+export const saveRoadmapResult = async (userId: string, data: any) => {
+  if (!firebaseEnabled) return Promise.resolve({ id: "local-roadmap" });
+  const db = withDb();
+  const ref = await addDoc(collection(db, "roadmapResults"), { 
+    ...data, 
+    userId, 
+    createdAt: Date.now() 
+  });
+  return { id: ref.id };
+};
+
+export const getUserRoadmaps = async (userId: string) => {
+  if (!firebaseEnabled) return [];
+  const db = withDb();
+  try {
+    const q = query(
+      collection(db, "roadmapResults"), 
+      where("userId", "==", userId),
+      orderBy("createdAt", "desc")
+    );
+    const snap = await getDocs(q);
+    return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  } catch (err) {
+    console.error("Error fetching roadmaps:", err);
+    return [];
+  }
 };

@@ -14,10 +14,13 @@ const mainLinks = [
   { to: "/departments", labelKey: "nav_departments" },
   { to: "/compare-courses", labelKey: "nav_compare" },
   { to: "/career-quiz", labelKey: "nav_quiz" },
+  { to: "/career-roadmap", labelKey: "nav_roadmap" },
 ];
 
 const careerToolsLinks = [
   { to: "/career-ai", labelKey: "nav_chatbot" },
+  { to: "/career-prediction", labelKey: "nav_prediction" },
+  { to: "/career-roadmap", labelKey: "nav_roadmap" },
 ];
 
 const platformLinks = [

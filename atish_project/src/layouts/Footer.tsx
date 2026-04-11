@@ -34,6 +34,7 @@ const Footer = () => {
       title: "AI & Career Tools",
       links: [
         { to: "/career-ai", label: "Career AI Chatbot" },
+        { to: "/career-roadmap", label: "AI Career Roadmap" },
         { to: "/cover-letter", label: "AI Cover Letter" },
         { to: "/mentors", label: "Connect with Mentors" },
       ]
