@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Diagram</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            themeVariables: {
+                fontSize: '16px'
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Learning Roadmap Diagram</h1>
+        <div class="mermaid">
+graph TD
+    Start([Start: AI Engineer Journey]) --> Foundation[Phase 1: Foundation<br/>3-6 months]
+    Foundation --> Skills1[Python Programming<br/>ML Basics]
+    Foundation --> Tools1[Jupyter, NumPy, Pandas]
+    
+    Skills1 --> Intermediate[Phase 2: Intermediate<br/>6-12 months]
+    Tools1 --> Intermediate
+    
+    Intermediate --> Skills2[Deep Learning<br/>Neural Networks]
+    Intermediate --> Tools2[TensorFlow, PyTorch]
+    
+    Skills2 --> Advanced[Phase 3: Advanced<br/>12-18 months]
+    Tools2 --> Advanced
+    
+    Advanced --> Skills3[MLOps<br/>Production Systems]
+    Advanced --> Tools3[Docker, Kubernetes, AWS]
+    
+    Skills3 --> Career[Career Ready<br/>AI Engineer]
+    Tools3 --> Career
+    
+    style Start fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+    style Foundation fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style Intermediate fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    style Advanced fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    style Career fill:#F44336,stroke:#C62828,stroke-width:3px,color:#fff
+    style Skills1 fill:#00BCD4,stroke:#00838F,color:#fff
+    style Skills2 fill:#00BCD4,stroke:#00838F,color:#fff
+    style Skills3 fill:#00BCD4,stroke:#00838F,color:#fff
+    style Tools1 fill:#FFC107,stroke:#F57C00,color:#000
+    style Tools2 fill:#FFC107,stroke:#F57C00,color:#000
+    style Tools3 fill:#FFC107,stroke:#F57C00,color:#000
+        </div>
+    </div>
+</body>
+</html>

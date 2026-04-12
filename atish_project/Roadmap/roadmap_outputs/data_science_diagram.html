@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Diagram</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            themeVariables: {
+                fontSize: '16px'
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Learning Roadmap Diagram</h1>
+        <div class="mermaid">
+graph TD
+    Start[Start Here] --> Ph1[Phase 1: Foundation]
+    Ph1 --> Ph2[Phase 2: Data Science Fundamentals]
+    Ph2 --> Ph3[Phase 3: Advanced Data Science Topics]
+    Ph3 --> Ph4[Phase 4: Project Development & Application]
+    Ph4 --> Ph5[Phase 5: Specialization & Advanced Topics]
+    Ph5 --> Ph6[Phase 6: Career Preparation & Job Search]
+    Ph6 --> End[Career Ready]
+
+    subgraph Learning_Path
+        Ph1
+        Ph2
+        Ph3
+        Ph4
+        Ph5
+        Ph6
+    
+    style Start fill:#3b82f6,stroke:#2563eb,color:#fff
+    style Ph1 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph2 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph3 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph4 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph5 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph6 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    
+    subgraph Phase_1
+        Node1[Data Visualization Basics]
+        Node2[Programming Fundamentals]
+        Node3[Machine Learning Basics]
+        Node4[Pandas and NumPy]
+        Node5[TensorFlow or PyTorch]
+        
+    subgraph Phase_2
+        Node6[Data Science Workflow]
+        Node7[Data Preprocessing and Feature Engineering]
+        Node8[Model Evaluation and Selection]
+        Node9[Collaboration and Communication in Data Science Teams]
+        
+    subgraph Phase_3
+        Node10[Deep Learning Fundamentals]
+        Node11[Natural Language Processing Basics]
+        Node12[Big Data Technologies]
+        
+    subgraph Phase_4
+        Node13[Project Development]
+        Node14[Data Science Application in Real-World Scenarios]
+        
+    subgraph Phase_5
+        Node15[Specialized Topics]
+        Node16[Advanced Machine Learning Techniques]
+        
+    subgraph Phase_6
+        Node17[Resume Writing and Job Search Strategies]
+        Node18[Interview Preparation and Negotiation Skills]
+        Node19[Professional Networking and Online Presence]
+        
+    subgraph Phase_7
+        Node20[Staying Up-to-Date with Industry Trends]
+        Node21[Continuously Learning and Improving Skills]
+        Node22[Participating in Data Science Communities and Forums]
+    
+    style Start fill:#3b82f6,stroke:#2563eb,color:#fff
+    style Ph1 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph2 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph3 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph4 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph5 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph6 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    
+    style Phase_1[Data Science Learning Roadmap]
+    style Phase_2[Phase 2: Data Science Fundamentals]
+    style Phase_3[Phase 3: Advanced Data Science Topics]
+    style Phase_4[Phase 4: Project Development & Application]
+    style Phase_5[Phase 5: Specialization & Advanced Topics]
+    style Phase_6[Phase 6: Career Preparation & Job Search]
+    style Phase_7[Phase 7: Continuous Learning & Professional Development]
+        </div>
+    </div>
+</body>
+</html>

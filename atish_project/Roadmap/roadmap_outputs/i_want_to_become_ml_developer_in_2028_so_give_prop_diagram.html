@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Diagram</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            themeVariables: {
+                fontSize: '16px'
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Learning Roadmap Diagram</h1>
+        <div class="mermaid">
+graph TD
+    Start[Start Here] --> Nov 2025: Learn the basics of machine learning.
+    Nov 2025 --> Phase1[Phase 1: Foundation]
+        Phase1 --> Phase2[Phase 2: Intermediate]
+            Phase2 --> Phase3[Phase 3: Advanced]
+                Phase3 --> End[Career Ready]
+
+    Style Start fill:#2ecc71,stroke:#27ae60,color:#fff
+    Style Phase1 fill:#3498db,stroke:#2980b9,color:#fff
+    Style Phase2 fill:#e67e22,stroke:#d35400,color:#fff
+    Style Phase3 fill:#9b59b6,stroke:#8e44ad,color:#fff
+    Style End fill:#e74c3c,stroke:#c0392b,color:#fff
+
+    Nov 2025 --> New Research Results:
+        New Research Results --> [1] "The Future of Machine Learning" by Google
+            New Research Results --> [2] "Machine Learning for Everyone" by Microsoft
+                New Research Results --> [3] IBM's AI roadmap outlines multimodal capabilities, including reaso knowledge and real-time processing.
+                New Research Results --> [4] Expect advancements in areas like computer vision, natural language processing, and reinforcement learning.
+
+    Phase1 --> New Research Results:
+        Phase1 --> Advanced Techniques: Machine learning will continue to evolve with new techniques like multimodal AI, explainability, and transfer learning.
+        Phase1 --> Emerging Technologies: Expect advancements in areas like computer vision, natural language processing, and reinforcement learning.
+
+    Phase2 --> New Research Results:
+        Phase2 --> Transfer Learning: Dive deeper into advanced techniques like transfer learning, attention mechanisms, and reinforcement learning.
+        Phase2 --> Explainability: Explore emerging technologies like multimodal AI, explainability, and computer vision.
+
+    Phase3 --> New Research Results:
+        Phase3 --> Model Evaluation: Focus on building a deep understanding of machine learning concepts, including model evaluation, hyperparameter tuning, and deployment strategies.
+        Phase3 --> Hyperparameter Tuning: Dive deeper into advanced techniques like transfer learning, attention mechanisms, and reinforcement learning.
+
+    End --> Career Ready
+        </div>
+    </div>
+</body>
+</html>

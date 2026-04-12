@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Diagram</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            themeVariables: {
+                fontSize: '16px'
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Learning Roadmap Diagram</h1>
+        <div class="mermaid">
+graph TD
+    Start[Start Here] --> Phase1[Phase 1: Foundation]
+    Phase1 --> Phase2[Phase 2: Intermediate]
+    Phase2 --> Phase3[Phase 3: Advanced]
+    Phase3 --> End[Career Ready]
+    
+    style Start fill:#2ecc71,stroke:#27ae60,color:#fff
+    style Phase1 fill:#3498db,stroke:#2980b9,color:#fff
+    style Phase2 fill:#e67e22,stroke:#d35400,color:#fff
+    style Phase3 fill:#9b59b6,stroke:#8e44ad,color:#fff
+    style End fill:#e74c3c,stroke:#c0392b,color:#fff
+    
+    subgraph Advanced_Topics
+        Phase1 --> Subgraph Foundation[Foundation]
+            Learning Objectives: Develop a strong foundation in machine learning, deep learning, natural language processing, and programming languages.
+            Key Topics to Master: Machine learning algorithms, NLP, programming languages, data structures and algorithms.
+            Skills to Learn: TensorFlow or PyTorch for machine learning, NLTK, spaCy, or Stanford CoreNLP for NLP, Pandas, NumPy, and Matplotlib for data analysis.
+        Phase2 --> Subgraph Intermediate[Intermediate]
+            Learning Objectives: Develop skills in deep learning, NLP, and programming languages.
+            Key Topics to Master: Deep learning techniques, Explainable AI (XAI) techniques, scikit-learn or Keras for machine learning.
+            Skills to Learn: PyTorch or TensorFlow for deep learning, NLTK, spaCy, or Stanford CoreNLP for NLP, scikit-learn or Keras for machine learning.
+        Phase3 --> Subgraph Advanced[Advanced]
+            Learning Objectives: Develop skills in quantum computing, graph neural networks (GNNs), and edge computing.
+            Key Topics to Master: Quantum Computing, GNNs, Edge Computing.
+            Skills to Learn: Quantum Computing with Qiskit or Cirq, GNNs with PyTorch or TensorFlow, Edge Computing with AWS or Azure.
+        Phase4 --> Subgraph Specialization[Specialization]
+            Learning Objectives: Develop skills in a specific area of AI, such as computer vision, reinforcement learning, or robotics.
+            Key Topics to Master: Computer Vision, Reinforcement Learning, Robotics.
+            Skills to Learn: TensorFlow or PyTorch for computer vision and reinforcement learning, OpenCV or scikit-image for image processing, Gym or ROS for robot control.
+        Phase5 --> Subgraph Mastery[Mastery]
+            Learning Objectives: Develop skills in a specific area of AI, such as natural language processing, decision-making, or human-computer interaction.
+            Key Topics to Master: Natural Language Processing, Decision-Making, Human-Computer Interaction.
+            Skills to Learn: NLTK, spaCy, or Stanford CoreNLP for NLP, scikit-learn or Keras for machine learning, TensorFlow or PyTorch for computer vision and reinforcement learning.
+        Phase6 --> Subgraph Certification[Certification]
+            Learning Objectives: Prepare for industry certifications in AI, such as AWS Certified Machine Learning - Associate or Google Cloud Certified - Professional Data Engineer.
+            Key Topics to Master: Industry-specific certifications, Ongoing learning and professional development.
+            Skills to Learn: Practical projects in AI, Collaboration and teamwork.
+    Phase7 --> Subgraph Project[Project Development]
+        Learning Objectives: Develop practical projects that apply AI skills and knowledge.
+        Key Topics to Master: Practical projects in AI, Collaboration and teamwork.
+        Skills to Learn: Ongoing learning and professional development, Industry-specific updates and trends.
+    Phase8 --> End[Career Ready]
+    
+    style Advanced_Topics fill:#3498db,stroke:#2980b9,color:#fff
+        </div>
+    </div>
+</body>
+</html>

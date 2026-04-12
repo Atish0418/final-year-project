@@ -1,0 +1,374 @@
+# Ollama Deep Researcher
+
+A fully local web research and summarization assistant powered by Ollama/LMStudio and LangGraph. This tool performs iterative web research, identifies knowledge gaps, and generates comprehensive reports with structured roadmaps and visual diagrams.
+
+## 📚 Documentation
+
+- **[QUICK_START.md](QUICK_START.md)** ⚡ - Get started in 5 minutes
+- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** 📋 - Detailed step-by-step setup instructions
+- **[SETUP_FLOWCHART.md](SETUP_FLOWCHART.md)** 📊 - Visual setup guide with diagrams
+- **[HOW_IT_WORKS.md](HOW_IT_WORKS.md)** 🔧 - Architecture and technical details
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** 🚨 - Common issues and solutions
+- **[DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)** 📑 - Complete documentation guide
+- **[README.md](README.md)** 📖 - This file (comprehensive reference)
+
+**New to the project?** Start with [QUICK_START.md](QUICK_START.md) or run `.\setup.ps1` for automated setup!
+
+## Features
+
+- **Fully Local LLM Execution**: Run entirely on your machine using Ollama or LMStudio
+- **Multiple Search APIs**: Support for DuckDuckGo (no API key), Tavily, Perplexity, and SearXNG
+- **Iterative Research**: Automatically identifies knowledge gaps and performs follow-up searches
+- **Smart Summarization**: Creates concise summaries with anti-repetition mechanisms
+- **Structured Roadmaps**: Generates actionable learning roadmaps with phases and milestones
+- **Visual Diagrams**: Automatically creates Mermaid flowcharts (HTML, PNG, SVG)
+- **Configurable Depth**: Control research iterations and content fetching behavior
+
+## Prerequisites
+
+- **Python**: 3.11 or higher
+- **LLM Provider**: Either Ollama or LMStudio running locally
+- **uv**: Python package manager (recommended) or pip
+
+### Installing uv (Recommended)
+
+```bash
+# macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Or using pip
+pip install uv
+```
+
+### Setting up Ollama
+
+1. Install Ollama from [ollama.ai](https://ollama.ai)
+2. Pull a model:
+```bash
+ollama pull llama3.2:1b
+# Or for better quality:
+ollama pull qwen2.5:7b
+```
+
+### Setting up LMStudio (Alternative)
+
+1. Download from [lmstudio.ai](https://lmstudio.ai)
+2. Load a model and start the local server
+3. Ensure it's running on `http://localhost:1234/v1`
+
+## Quick Installation
+
+### Automated Setup (Windows)
+
+```powershell
+# Run the automated setup script
+.\setup.ps1
+```
+
+### Manual Installation
+
+See **[SETUP_GUIDE.md](SETUP_GUIDE.md)** for detailed step-by-step instructions.
+
+**Quick version:**
+
+```bash
+# 1. Install Ollama and pull a model
+ollama pull llama3.2:1b
+
+# 2. Clone and install
+git clone <repository-url>
+cd ollama-deep-researcher
+pip install -e .
+playwright install chromium
+
+# 3. Configure
+copy .env.example .env
+# Edit .env with your settings
+
+# 4. Test
+python test_setup.py
+
+# 5. Run
+uvx --refresh --from "langgraph-cli[inmem]" --with-editable . --python 3.11 langgraph dev
+```
+
+## Configuration
+
+Create a `.env` file in the project root (copy from `.env.example`):
+
+```bash
+# Search Configuration
+SEARCH_API=duckduckgo              # Options: duckduckgo, tavily, perplexity, searxng
+SEARXNG_URL=http://localhost:8888  # Only needed for SearXNG
+
+# API Keys (optional, only if using these services)
+TAVILY_API_KEY=tvly-xxxxx          # Get from https://tavily.com
+PERPLEXITY_API_KEY=pplx-xxxxx      # Get from https://www.perplexity.ai
+
+# LLM Configuration
+LLM_PROVIDER=ollama                # Options: ollama, lmstudio
+LOCAL_LLM=llama3.2:1b              # Model name
+OLLAMA_BASE_URL=http://localhost:11434
+LMSTUDIO_BASE_URL=http://localhost:1234/v1
+
+# Research Configuration
+MAX_WEB_RESEARCH_LOOPS=1           # Number of research iterations (1-5 recommended)
+FETCH_FULL_PAGE=True               # Fetch full page content vs snippets
+STRIP_THINKING_TOKENS=True         # Remove <think> tags from responses
+USE_TOOL_CALLING=False             # Use tool calling vs JSON mode
+
+# Feature Flags
+GENERATE_ROADMAP=True              # Generate structured learning roadmap
+PROCESS_SOURCES_INDIVIDUALLY=False # Process sources one by one
+GENERATE_MERMAID_DIAGRAM=True      # Generate visual flowchart
+```
+
+## Usage
+
+### Quick Start with LangGraph CLI
+
+```bash
+# Start the development server
+uvx --refresh --from "langgraph-cli[inmem]" --with-editable . --python 3.11 langgraph dev
+```
+
+The server will start on `http://localhost:2024`. Open LangGraph Studio in your browser to interact with the assistant.
+
+### Using Docker
+
+```bash
+# Build the image
+docker build -t ollama-deep-researcher .
+
+# Run the container
+docker run -p 2024:2024 \
+  -e OLLAMA_BASE_URL=http://host.docker.internal:11434 \
+  -e SEARCH_API=duckduckgo \
+  ollama-deep-researcher
+```
+
+### Programmatic Usage
+
+```python
+from ollama_deep_researcher.graph import graph
+
+# Run research
+result = graph.invoke({
+    "research_topic": "Full Stack Developer career path"
+})
+
+# Access results
+print(result["running_summary"])
+print(result["roadmap"])
+print(result["mermaid_diagram"])
+```
+
+## How It Works
+
+### Workflow
+
+1. **Generate Query**: Creates an optimized search query from your research topic
+2. **Web Research**: Executes web search using configured API
+3. **Summarize Sources**: Creates or updates running summary with new information
+4. **Reflect on Summary**: Identifies knowledge gaps and generates follow-up queries
+5. **Route Research**: Continues research loop or finalizes based on configuration
+6. **Generate Roadmap**: (Optional) Creates structured learning roadmap
+7. **Generate Diagram**: (Optional) Creates visual Mermaid flowchart
+
+### Architecture
+
+```
+┌─────────────────┐
+│  Research Topic │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Generate Query  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│  Web Research   │◄──────┐
+└────────┬────────┘       │
+         │                │
+         ▼                │
+┌─────────────────┐       │
+│ Summarize       │       │
+└────────┬────────┘       │
+         │                │
+         ▼                │
+┌─────────────────┐       │
+│ Reflect & Gap   │       │
+│   Analysis      │       │
+└────────┬────────┘       │
+         │                │
+         ▼                │
+    More loops? ──────────┘
+         │ No
+         ▼
+┌─────────────────┐
+│ Finalize        │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Generate        │
+│ Roadmap         │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Generate        │
+│ Mermaid Diagram │
+└─────────────────┘
+```
+
+## Configuration Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `max_web_research_loops` | 1 | Number of research iterations (1-5 recommended) |
+| `local_llm` | llama3.2:1b | Model name in Ollama/LMStudio |
+| `llm_provider` | ollama | LLM provider (ollama or lmstudio) |
+| `search_api` | duckduckgo | Search API to use |
+| `fetch_full_page` | True | Fetch full page content vs snippets only |
+| `strip_thinking_tokens` | True | Remove `<think>` tags from model outputs |
+| `use_tool_calling` | False | Use tool calling vs JSON mode |
+| `generate_roadmap` | True | Generate structured learning roadmap |
+| `process_sources_individually` | False | Process sources one by one |
+| `generate_mermaid_diagram` | True | Generate visual flowchart |
+
+## Output Files
+
+Research outputs are saved in the `roadmap_outputs/` directory:
+
+- `<topic>_diagram.html` - Interactive HTML diagram (always generated)
+- `<topic>_diagram.png` - PNG image (requires internet for Mermaid.ink API)
+- `<topic>_diagram.svg` - SVG vector image (requires internet for Mermaid.ink API)
+
+## Search API Comparison
+
+| API | API Key Required | Rate Limits | Full Page Content | Notes |
+|-----|------------------|-------------|-------------------|-------|
+| DuckDuckGo | ❌ No | Moderate | ✅ Yes | Best for getting started |
+| Tavily | ✅ Yes | Generous free tier | ✅ Yes | High quality results |
+| Perplexity | ✅ Yes | API limits apply | ✅ Yes | Uses sonar-pro model |
+| SearXNG | ❌ No | None (self-hosted) | ✅ Yes | Requires local instance |
+
+## Troubleshooting
+
+### Ollama Connection Issues
+
+```bash
+# Check if Ollama is running
+curl http://localhost:11434/api/tags
+
+# Start Ollama service
+ollama serve
+```
+
+### LMStudio Connection Issues
+
+1. Ensure LMStudio server is running
+2. Check the server URL in settings (default: `http://localhost:1234/v1`)
+3. Verify a model is loaded
+
+### Search API Errors
+
+- **DuckDuckGo**: No setup needed, should work out of the box
+- **Tavily**: Verify `TAVILY_API_KEY` in `.env`
+- **Perplexity**: Verify `PERPLEXITY_API_KEY` in `.env`
+- **SearXNG**: Ensure instance is running at `SEARXNG_URL`
+
+### Playwright Installation
+
+If web scraping fails:
+
+```bash
+# Install browsers
+playwright install
+
+# Or install specific browser
+playwright install chromium
+```
+
+## Development
+
+### Project Structure
+
+```
+ollama-deep-researcher/
+├── src/ollama_deep_researcher/
+│   ├── __init__.py              # Package initialization
+│   ├── configuration.py         # Configuration management
+│   ├── state.py                 # State definitions
+│   ├── graph.py                 # Main workflow graph
+│   ├── prompts.py               # LLM prompts
+│   ├── utils.py                 # Utility functions
+│   ├── lmstudio.py             # LMStudio integration
+│   └── mermaid_renderer.py     # Diagram rendering
+├── .env                         # Environment configuration
+├── .env.example                 # Example configuration
+├── langgraph.json              # LangGraph configuration
+├── pyproject.toml              # Project dependencies
+├── Dockerfile                  # Docker configuration
+└── README.md                   # This file
+```
+
+### Running Tests
+
+```bash
+# Install dev dependencies
+uv pip install -e ".[dev]"
+
+# Run linting
+ruff check .
+
+# Run type checking
+mypy src/
+```
+
+## Advanced Usage
+
+### Custom Prompts
+
+Edit prompts in `src/ollama_deep_researcher/prompts.py` to customize:
+- Query generation behavior
+- Summarization style
+- Reflection depth
+- Roadmap structure
+- Diagram styling
+
+### Custom Search Integration
+
+Add new search providers in `src/ollama_deep_researcher/utils.py`:
+
+```python
+def custom_search(query: str, max_results: int = 3) -> Dict[str, Any]:
+    # Your implementation
+    return {"results": [...]}
+```
+
+## License
+
+MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Acknowledgments
+
+- Built with [LangGraph](https://github.com/langchain-ai/langgraph)
+- Powered by [Ollama](https://ollama.ai) and [LMStudio](https://lmstudio.ai)
+- Search APIs: Tavily, Perplexity, DuckDuckGo, SearXNG
+
+## Support
+
+For issues and questions:
+- Open an issue on GitHub
+- Check the [HOW_IT_WORKS.md](HOW_IT_WORKS.md) for detailed documentation

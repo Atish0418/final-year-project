@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Diagram</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            themeVariables: {
+                fontSize: '16px'
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Learning Roadmap Diagram</h1>
+        <div class="mermaid">
+graph TD
+    Start[Start Here] --> Ph1[Phase 1: Foundation]
+    Ph1 --> Ph2[Phase 2: Development]
+    Ph2 --> Ph3[Phase 3: Deployment]
+    Ph3 --> End[Career Ready]
+    
+    subgraph Learning_Path
+        Ph1
+        Ph2
+    end
+    
+    style Start fill:#3b82f6,stroke:#2563eb,color:#fff
+    style End fill:#10b981,stroke:#059669,color:#fff
+    style Ph1 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph2 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    style Ph3 fill:#f8fafc,stroke:#e2e8f0,color:#0f172a
+    
+    Node1[Node 1: MongoDB Basics]
+    Node2[Node 2: Express.js Features]
+    Node3[Node 3: React Components]
+    Node4[Node 4: Node.js Fundamentals]
+    
+    Node5[Node 5: Setting up Environment]
+    Node6[Node 6: Basic CRUD Operations]
+    Node7[Node 7: Understanding Express.js Routing]
+    Node8[Node 8: Handling Errors and Validation]
+    
+    Node9[Node 9: Building Simple React App]
+    Node10[Node 10: Optimizing Database Queries]
+    Node11[Node 11: Server-Side Rendering]
+    Node12[Node 12: Caching Optimization]
+    
+    Node13[Node 13: Deploying to Heroku or AWS]
+    Node14[Node 14: Setting up Monitoring Tools]
+    Node15[Node 15: Optimizing Containerization and Deployment Processes]
+    
+    Node16[Node 16: Building Serverless Applications with AWS Lambda]
+    Node17[Node 17: Creating Secure APIs using API Gateway]
+    Node18[Node 18: Implementing Security Measures like SSL/TLS]
+    
+    Node19[Node 19: Debugging and Testing Applications for Quality and Reliability]
+    Node20[Node 20: Participating in Online Communities]
+        </div>
+    </div>
+</body>
+</html>
